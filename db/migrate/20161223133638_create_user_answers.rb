@@ -1,0 +1,13 @@
+class CreateUserAnswers < ActiveRecord::Migration[5.0]
+  def change
+    create_table :user_answers do |t|
+      t.integer		:user_id
+      t.integer		:answer_id
+      t.string		:answer
+      t.timestamps
+    end
+    add_index(:user_answers, :user_id)
+    add_index(:user_answers, :answer_id)
+    add_index(:user_answers, [:user_id, :answer_id])
+  end
+end
