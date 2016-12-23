@@ -1,0 +1,214 @@
+<div id="part_one">
+	<div class="row">
+		<div class="page-header">
+			<h4>Part 1: Basic Math</h4>
+		</div>
+	</div>
+	<div class="row">
+		<%= form_for :answers do |f| %>
+			<div class="row">
+			  <div class="col-xs-12 col-sm-12 col-md-3">
+			  	1) 138 + 25 = <%= f.text_field :answer, id: "part_1_question_1", size: 5, class: "pull-right" %>
+			  </div>
+			  <div class="col-xs-12 col-sm-12 col-md-3">
+			  	2) 22 + 1579 = <%= f.text_field :answer, id: "part_1_question_2", size: 5, class: "pull-right" %>
+			  </div>
+			  <div class="col-xs-12 col-sm-12 col-md-3">
+			  	3) 177 - 89 = <%= f.text_field :answer, id: "part_1_question_3", size: 5, class: "pull-right" %>
+			  </div>
+			  <div class="col-xs-12 col-sm-12 col-md-3">
+			  	4) 120 - 73 = <%= f.text_field :answer, id: "part_1_question_4", size: 5, class: "pull-right" %>
+			  </div>
+			</div>
+
+			<div class="row" style="padding-top: 20px;">
+			  <div class="col-xs-12 col-sm-12 col-md-3">
+			  	5) 633 - 401 = <%= f.text_field :answer, id: "part_1_question_5", size: 5, class: "pull-right" %>
+			  </div>
+			  <div class="col-xs-12 col-sm-12 col-md-3">
+			  	6) 6965 - 3261 = <%= f.text_field :answer, id: "part_1_question_6", size: 5, class: "pull-right" %>
+			  </div>
+			  <div class="col-xs-12 col-sm-12 col-md-3">
+			  	7) 28 x 3 = <%= f.text_field :answer, id: "part_1_question_7", size: 5, class: "pull-right" %>
+			  </div>
+			  <div class="col-xs-12 col-sm-12 col-md-3">
+			  	8) 336 x 5 = <%= f.text_field :answer, id: "part_1_question_8", size: 5, class: "pull-right" %>
+			  </div>
+			</div>
+
+			<div class="row" style="padding-top: 20px;">
+			  <div class="col-xs-12 col-sm-12 col-md-3">
+			  	9) 70 x 4 = <%= f.text_field :answer, id: "part_1_question_9", size: 5, class: "pull-right" %>
+			  </div>
+			  <div class="col-xs-12 col-sm-12 col-md-3">
+			  	10) 265 / 5 = <%= f.text_field :answer, id: "part_1_question_10", size: 5, class: "pull-right" %>
+			  </div>
+			  <div class="col-xs-12 col-sm-12 col-md-3">
+			  	11) 154 / 14 = <%= f.text_field :answer, id: "part_1_question_11", size: 5, class: "pull-right" %>
+			  </div>
+			  <div class="col-xs-12 col-sm-12 col-md-3">
+			  	12) 204 / 17 = <%= f.text_field :answer, id: "part_1_question_12", size: 5, class: "pull-right" %>
+			  </div>
+			</div>
+		<% end %>
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md 12">
+				<%= link_to "Next", "#", class: "btn btn-success pull-right next" %>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="part_two" style="display:none;">
+	<div class="row">
+		<div class="page-header">
+			<h4>Part 2: Reasoning Skills</h4>
+		</div>
+	</div>
+
+  <div class="row">
+	  <div class="col-xs-12 col-sm-6 col-md-6">
+	    1) How many boxes are pictured?
+	  </div>
+
+	  <div class="col-xs-12 col-sm-6 col-md-6">
+	  	2) How many boes are pictured?
+	  </div>
+  </div>
+</div>
+
+<div id="part_three" style="display:none;">
+	<div class="row">
+		<div class="page-header">
+			<h4>Part 3: Tape Measure</h4>
+		</div>
+	</div>
+
+  <div class="row">
+	  <div class="col-xs-12 col-sm-12 col-md-12">
+	    Circle the correct answer for each letter listed above.
+	  </div>
+	</div>
+	<div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-3">
+    	<b>A)</b> 1 1/4 <%= radio_button 'part_three_quest_a', 'part_three_quest_a', "1 1/4" %>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+    	1 1/2 <%= radio_button 'part_three_quest_b', 'part_three_quest_b', "1 1/2" %>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+    	1 3/8 <%= radio_button 'part_three_quest_c', 'part_three_quest_c', "1 3/8" %>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+    	2
+    </div>
+  </div>
+  <div class="row">
+	  <div class="col-xs-12 col-sm-6 col-md-3">
+    	<b>B)</b>	2 3/4
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+    	2 1/2
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+    	3
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+    	3 1/8
+    </div>
+  </div>
+  <div class="row">
+	  <div class="col-xs-12 col-sm-6 col-md-3">
+    	<b>C)</b>	3
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+    	3 1/2
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+    	1 1/2
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+    	3 1/4
+    </div>
+  </div>
+  <div class="row">
+	  <div class="col-xs-12 col-sm-6 col-md-3">
+    	<b>D)</b>	1 1/4
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+    	3/4
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+    	1 3/8
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+    	1
+    </div>
+  </div>
+  <div class="row">
+	  <div class="col-xs-12 col-sm-6 col-md-3">
+    	<b>E)</b>	2 1/4
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+    	2
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+    	3
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+    	3 1/4
+    </div>
+  </div>
+  <div class="row">
+	  <div class="col-xs-12 col-sm-6 col-md-3">
+    	<b>F)</b>	2 3/4
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+    	3 3/32
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+    	3
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+    	3 1/8
+    </div>
+  </div>
+</div>
+
+<div id="part_four" style="display:none;">
+	<div class="row">
+		<div class="page-header">
+			<h4>Part 4:</h4>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<div class="row">
+		  	Rank the numbers below from smallest to largest.
+		  </div>
+		  <div class="row">
+		  	<p>5723852</p>
+		  	<p>8456812</p>
+		  	<p>1859756</p>
+		  	<p>7575757</p>
+		  	<p>7755775</p>
+		  	<p>3733773</p>
+		  </div>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<div class="row">
+		  	Convert the following fractions to decimals:
+		  </div>
+		  <div class="row">
+		  	<p>1/5</p>
+		  	<p>3/4</p>
+		  	<p>5/8</p>
+		  	<p>1/2</p>
+		  	<p>1/16</p>
+		  	<p>1/4</p>
+		  	<p>1/8</p>
+		  </div>
+		</div>
+	</div>
+</div>
