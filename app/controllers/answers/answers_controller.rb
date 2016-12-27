@@ -1,4 +1,4 @@
-class AnswersController < ApplicationController
+class Answers::AnswersController < ApplicationController
 	def index
 		@answers = Answer.all
 	end
@@ -20,10 +20,10 @@ class AnswersController < ApplicationController
 
 		if @answer.save
 			flash[:notice] = "Answer successfully created"
-			redirect_to answers_path
+			redirect_to answers_answers_path
 		else
 			flash[:error] = "There was an error when trying to save. Please try again. All fields must be filled out."
-			render new_answer_path(@answer)
+			render new_answers_answer_path(@answer)
 		end
 	end
 
@@ -32,10 +32,10 @@ class AnswersController < ApplicationController
 
 		if @answer.update_attributes(answer_params)
 			flash[:notice] = "Answer successfully updated"
-			redirect_to answers_path
+			redirect_to answers_answers_path
 		else
 			flash[:error] = "There was an error when trying to save. Please try again.  All fields must be filled out."
-			render edit_answer_path(@answer)
+			render edit_answers_answer_path(@answer)
 		end
 	end
 
@@ -44,10 +44,10 @@ class AnswersController < ApplicationController
 
 		if @answer.delete
 			flash[:notice] = "Answer successfully deleted"
-			redirect_to answers_path
+			redirect_to answers_answers_path
 		else
 			flash[:error] = "There was an error when trying to save. Please try again."
-			redirect_to answers_path
+			redirect_to answers_answers_path
 		end
 	end
 

@@ -1,7 +1,7 @@
 <div class="page-header text-center">
 	<h3>Edit existing answers to questions:</h3>
 </div>
-<%= form_for @answer do |f| %>
+<%= form_for @answer, as: :answer, url: answers_answer_path, method: :put do |f| %>
 	<div class="form-group">
 		<%= f.label "Part Number:" %> 
 		<%= f.text_field :part_num, class: "form-control" %>
@@ -20,4 +20,4 @@
 		</div>
 	</div>
 <% end %>
-<%= link_to "<< Back", answers_path %>
+<%= link_to "<< Back", answers_answers_path %>
