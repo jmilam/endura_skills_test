@@ -1,0 +1,20 @@
+<table class="table table">
+	<thead>
+		<tr>
+			<th>User Email</th>
+			<th>Total Correct</th>
+			<th>Total Questions</th>
+			<th>Completed date</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @logins.each do |email, values| %>
+			<tr>
+				<td><%= link_to email, user_answers_finish_path(values[:id])  %></td>
+				<td><%= values[:correct_count] %></td>
+				<td><%= values[:total_answers] %></td>
+				<td><%= values[:completed_date] %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>

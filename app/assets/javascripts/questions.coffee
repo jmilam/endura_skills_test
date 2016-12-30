@@ -5,6 +5,7 @@
 submitForm;
 
 submitForm = (form_id) ->
+  part_num = form_id 
   if form_id is 'part_one'
     question_1 = $("#part_1_question_1").val()
     question_2 = $("#part_1_question_2").val()
@@ -35,6 +36,13 @@ submitForm = (form_id) ->
     send_data = {user_answer: {part_two: {one: question_1, two: question_2}}}
 
   else if form_id is 'part_three'
+    question_a = undefined
+    question_b = undefined
+    question_c = undefined
+    question_d = undefined
+    question_e = undefined
+    question_f = undefined
+
     $.each $('.part_three_question_a'), ->
       if $(this).is(':checked')
         question_a = $(this).val()
@@ -65,11 +73,51 @@ submitForm = (form_id) ->
         question_f = $(this).val()
         return false
 
-    console.log("Before send")
     send_data = {user_answer: {part_three: {one: question_a, two: question_b, three: question_c, four: question_d, five: question_e, six: question_f}}}
 
+  else if form_id is 'part_four'
+    question_1_a = $("#part_4_question_1_a").val()
+    question_1_b = $("#part_4_question_1_b").val()
+    question_1_c = $("#part_4_question_1_c").val()
+    question_1_d = $("#part_4_question_1_d").val()
+    question_1_e = $("#part_4_question_1_e").val()
+    question_1_f = $("#part_4_question_1_f").val()
+
+    question_2_a = $("#part_4_question_2_a").val()
+    question_2_b = $("#part_4_question_2_b").val()
+    question_2_c = $("#part_4_question_2_c").val()
+    question_2_d = $("#part_4_question_2_d").val()
+    question_2_e = $("#part_4_question_2_e").val()
+    question_2_f = $("#part_4_question_2_f").val()
+    question_2_g = $("#part_4_question_2_g").val()
+
+    question_3 = undefined
+
+    $.each $('.part_4_question_3'), ->
+      if $(this).is(':checked')
+        question_3 = $(this).val()
+        return false
+
+    send_data = {user_answer: {part_four: {one: question_1_a, two: question_1_b, three: question_1_c, four: question_1_d, five: question_1_e, six: question_1_f, seven: question_2_a, eight: question_2_b, nine: question_2_c, ten: question_2_d, eleven: question_2_e, twelve: question_2_f, thirteen: question_2_g, fourteen: question_3}}}
+
+  else if form_id is 'part_five'
+    question_1 = $("#part_5_question_1").val()
+    question_2 = $("#part_5_question_2").val()
+    question_3 = $("#part_5_question_3").val()
+    question_4 = $("#part_5_question_4").val()
+    question_5 = $("#part_5_question_5").val()
+    question_6 = $("#part_5_question_6").val()
+    question_7 = $("#part_5_question_7").val()
+
+    send_data = {user_answer: {part_five: {one: question_1, two: question_2, three: question_3, four: question_4, five: question_5, six: question_6, seven: question_7}}}
+
+  else if form_id is 'finish'
+    question_1 = $("#part_6_question_1").val()
+
+    send_data = {user_answer: {part_six: {one: question_1}}}
+
   $.ajax
-    url: '/user_answers/part_one'
+    url: '/user_answers/' + part_num
     type: 'post'
     dataType: 'json'
     data: send_data
@@ -93,4 +141,13 @@ $(document).on 'click', ".prev", (e) ->
   id = $(this).attr('href')
   $(this).parents(id).css 'display', 'none'
   $(this).parents(id).prev().css 'display', 'block' 
+  return
+
+$(document).on 'click', ".finish", (e) ->
+  e.preventDefault()
+  submitForm($(this).attr('id'))
+  id = $(this).attr('href')
+  alert("Done");
+  #$(this).parents(id).css 'display', 'none'
+  $#(this).parents(id).next().css 'display', 'block' 
   return

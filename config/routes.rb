@@ -6,6 +6,12 @@ Rails.application.routes.draw do
   end
   namespace :user_answers do
   	resources :part_one 
+    resources :part_two
+    resources :part_three
+    resources :part_four
+    resources :part_five
+    resources :finish
+    resources :admin
   end
   resources :questions
 

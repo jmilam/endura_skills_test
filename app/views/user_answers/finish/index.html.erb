@@ -1,0 +1,22 @@
+<table class="table table">
+	<thead>
+		<tr>
+			<td>Part Num</td>
+		  <td>Question Num</td>
+		  <td>Answer</td>
+		</tr>
+	</thead>
+	<tbody>
+		<% @user_answers.each do |user_answer| %>
+			<tr>
+				<td><%= Answer.find(user_answer.answer_id).part_num %></td>
+				<td><%= Answer.find(user_answer.answer_id).question_num %></td>
+				<td><%= user_answer.answer %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
+
+<div class="row">
+	<%= link_to "Complete", user_answers_finish_path(1), method: :delete, class: "btn btn-success pull-right" %>
+</div>

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe AnswersController, type: :controller do
+RSpec.describe Answers::AnswersController, type: :controller do
 	describe "GET index" do
 		it "gets all answers" do
 			answers = Answer.all
