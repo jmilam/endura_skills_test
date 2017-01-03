@@ -491,4 +491,16 @@
 			</div>
 		</div>
 	</div>
+
+	<div id="finish" style="display:none;">
+		<div id="finishTable">
+		</div>
+
+		<div class="row">
+			<div class="btn-group pull-right" role="group">
+				<%= link_to "Back", '#finish', class: "btn btn-danger prev" %>
+				<%= link_to "Complete", user_answers_finish_path(1), method: :delete, class: "btn btn-success done" %>
+			</div>
+		</div>
+	</div>
 <% end %>

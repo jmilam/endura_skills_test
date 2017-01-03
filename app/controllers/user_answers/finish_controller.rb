@@ -28,16 +28,19 @@ class UserAnswers::FinishController < ApplicationController
 						if question_answer.nil?
 							next
 						else
-							ua = UserAnswer.where(user_id: @login.id, answer_id: question_answer.id).last
+							ua = @login.user_answers.where(answer_id: question_answer.id).last
 							if ua.nil?
-								UserAnswer.create(user_id: @login.id, answer_id: question_answer.id, answer: answer)
+								@login.user_answers.create(answer_id: question_answer.id, answer: answer)
 							else
 								UserAnswer.update(ua.id, answer: answer)
 							end
 						end
 					end
 				end
-				redirect_to user_answers_finish_index_path
+				respond_to do |format|
+			    format.json { render json: {"value" => UserAnswer.build_html_table_from_data(@login.user_answers)}}
+			  end
+				
 			rescue Exception => error
 				p "#{error}"
 			end
@@ -58,6 +61,7 @@ class UserAnswers::FinishController < ApplicationController
 
 	def destroy
 		current_login.complete = true
+		current_login.completed_date = Date.today
 		current_login.save
 		flash[:notice] = "Successfully completed test. Please follow up with your HR representative."
 		sign_out(current_login)

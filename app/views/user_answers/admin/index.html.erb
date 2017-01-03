@@ -4,6 +4,7 @@
 			<th>User Email</th>
 			<th>Total Correct</th>
 			<th>Total Questions</th>
+			<th>Percent</th>
 			<th>Completed date</th>
 		</tr>
 	</thead>
@@ -13,7 +14,8 @@
 				<td><%= link_to email, user_answers_finish_path(values[:id])  %></td>
 				<td><%= values[:correct_count] %></td>
 				<td><%= values[:total_answers] %></td>
-				<td><%= values[:completed_date] %></td>
+				<td><%= values[:percent] %></td>
+				<td><%= values[:completed_date].strftime("%m/%d/%Y") unless values[:completed_date].nil? %></td>
 			</tr>
 		<% end %>
 	</tbody>

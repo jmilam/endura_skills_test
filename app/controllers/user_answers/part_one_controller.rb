@@ -17,14 +17,13 @@ class UserAnswers::PartOneController < ApplicationController
 			begin
 				params[:user_answer].each do |key, value|
 					value.each do |question_num, answer|
-						p answer
 						question_answer = Answer.where(part_num: @stringify_part_num[key], question_num: @stringify_num[question_num]).last
 						if question_answer.nil?
 							next
 						else
-							ua = UserAnswer.where(user_id: @login.id, answer_id: question_answer.id).last
+							ua = @login.user_answers.where(answer_id: question_answer.id).last
 							if ua.nil?
-								UserAnswer.create(user_id: @login.id, answer_id: question_answer.id, answer: answer)
+								@login.user_answers.create(answer_id: question_answer.id, answer: answer)
 							else
 								UserAnswer.update(ua.id, answer: answer)
 							end

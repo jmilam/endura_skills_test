@@ -3,9 +3,11 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 submitForm;
+buildFinishTable;
 
 submitForm = (form_id) ->
   part_num = form_id 
+  
   if form_id is 'part_one'
     question_1 = $("#part_1_question_1").val()
     question_2 = $("#part_1_question_2").val()
@@ -113,7 +115,6 @@ submitForm = (form_id) ->
 
   else if form_id is 'finish'
     question_1 = $("#part_6_question_1").val()
-
     send_data = {user_answer: {part_six: {one: question_1}}}
 
   $.ajax
@@ -122,11 +123,12 @@ submitForm = (form_id) ->
     dataType: 'json'
     data: send_data
     success: (data) ->
+      if part_num is 'finish'
+        buildFinishTable(data["value"])
       return
     error: (xhr, ajaxOptions, thrownError) ->
       alert "Please call HR before moving forward " + thrownError
       return false
-
 
 $(document).on 'click', ".next", (e) ->
   e.preventDefault()
@@ -143,11 +145,45 @@ $(document).on 'click', ".prev", (e) ->
   $(this).parents(id).prev().css 'display', 'block' 
   return
 
+
 $(document).on 'click', ".finish", (e) ->
   e.preventDefault()
   submitForm($(this).attr('id'))
   id = $(this).attr('href')
-  alert("Done");
-  #$(this).parents(id).css 'display', 'none'
-  $#(this).parents(id).next().css 'display', 'block' 
+  $(this).parent().parent().parent().css 'display', 'none'
+  $(this).parent().parent().parent().next().css 'display', 'block'
   return
+
+$(document).on 'turbolinks:load', ->
+  $('#timer').css('display', 'block')
+  return
+
+buildFinishTable = (tableString) ->
+  $('#finishTable').html(tableString)
+  return
+
+setInterval (-> 
+  counter = $('#timer').text()
+  counter = counter - 0.01
+  if counter == 0.00
+    $('#timer').text 0.00
+    $.ajax
+      url: '/questions/99'
+      type: 'delete'
+      dataType: 'json'
+      data: {id: 99}
+      success: (data) ->
+        window.location = 'http://' + window.location.host + '/logins/sign_in'
+        return
+      error: (xhr, ajaxOptions, thrownError) ->
+        alert "Please call HR before moving forward " + thrownError
+        return false
+
+  else if counter.toFixed(2).toString().match(/.99/)
+    counter = counter - 0.40
+    $('#timer').text counter.toFixed 2
+  else
+    $('#timer').text counter.toFixed 2
+    return
+), 1000
+return
