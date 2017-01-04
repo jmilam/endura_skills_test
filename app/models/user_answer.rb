@@ -1,5 +1,5 @@
 class UserAnswer < ApplicationRecord
-	belongs_to :login
+	belongs_to :user
 
 	def self.calculate_correct_count(user_answers)
 		count = 0
@@ -43,5 +43,10 @@ class UserAnswer < ApplicationRecord
 
 		return_value << "</tbody></table>"
 		return_value
+	end
+
+	def self.get_answer(part_num, question_num, user_answers)
+		answers = user_answers.select {|question| question[:part_num] == part_num && question[:question_num] == question_num}.first
+		answers[:user_answer] unless answers.nil?
 	end
 end

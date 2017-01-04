@@ -1,13 +1,14 @@
 class UserAnswers::FinishController < ApplicationController
+	skip_before_action :authenticate_login!
 	def index
 		@login = current_login
 		@user_answers = @login.user_answers
 	end
 
 	def show
-		@login = Login.find(params[:id])
+		@user = User.find(params[:id])
 		@user_answers = Array.new
-		@login.user_answers.each do |user_answer|
+		@user.user_answers.each do |user_answer|
 			@user_answers << UserAnswer.format_user_answers(user_answer)
 		end
 	end
@@ -19,7 +20,7 @@ class UserAnswers::FinishController < ApplicationController
 	end
 
 	def create
-		@login = current_login
+		@login = User.find(params[:user_id])
 		UserAnswer.transaction do
 			begin
 				params[:user_answer].each do |key, value|
@@ -37,10 +38,6 @@ class UserAnswers::FinishController < ApplicationController
 						end
 					end
 				end
-				respond_to do |format|
-			    format.json { render json: {"value" => UserAnswer.build_html_table_from_data(@login.user_answers)}}
-			  end
-				
 			rescue Exception => error
 				p "#{error}"
 			end
@@ -60,12 +57,11 @@ class UserAnswers::FinishController < ApplicationController
 	end
 
 	def destroy
-		current_login.complete = true
-		current_login.completed_date = Date.today
-		current_login.save
+		user = User.find(params[:id])
+		user.complete = true
+		user.completed_date = Date.today
+		user.save
 		flash[:notice] = "Successfully completed test. Please follow up with your HR representative."
-		sign_out(current_login)
-		redirect_to new_login_session_path
 	end
 
 	private

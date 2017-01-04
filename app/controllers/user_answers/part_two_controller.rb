@@ -1,4 +1,5 @@
 class UserAnswers::PartTwoController < ApplicationController
+	skip_before_action :authenticate_login!
 	def index
 	end
 
@@ -12,7 +13,7 @@ class UserAnswers::PartTwoController < ApplicationController
 	end
 
 	def create
-		@login = current_login
+		@login = User.find(params[:user_id])
 		UserAnswer.transaction do
 			begin
 				params[:user_answer].each do |key, value|

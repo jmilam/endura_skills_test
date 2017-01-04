@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170103143907) do
+ActiveRecord::Schema.define(version: 20170104190024) do
 
   create_table "answers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "part_num"
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20170103143907) do
     t.string   "answer"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.integer  "test_num"
   end
 
   create_table "logins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -41,21 +42,32 @@ ActiveRecord::Schema.define(version: 20170103143907) do
   end
 
   create_table "user_answers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "login_id"
+    t.integer  "user_id"
     t.integer  "answer_id"
     t.string   "answer"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["answer_id"], name: "index_user_answers_on_answer_id", using: :btree
-    t.index ["login_id", "answer_id"], name: "index_user_answers_on_login_id_and_answer_id", using: :btree
-    t.index ["login_id"], name: "index_user_answers_on_login_id", using: :btree
+    t.index ["user_id", "answer_id"], name: "index_user_answers_on_user_id_and_answer_id", using: :btree
+    t.index ["user_id"], name: "index_user_answers_on_user_id", using: :btree
+  end
+
+  create_table "user_tables", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string  "first_name"
+    t.string  "last_name"
+    t.string  "email"
+    t.boolean "complete"
+    t.date    "completed_date"
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "first_name"
     t.string   "last_name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.string   "email"
+    t.boolean  "complete"
+    t.date     "completed_date"
   end
 
 end

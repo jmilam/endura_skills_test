@@ -12,8 +12,12 @@ Rails.application.routes.draw do
     resources :part_five
     resources :finish
     resources :admin
+    resources :user
   end
-  resources :questions
+  namespace :questions do
+    resources :test_one
+    resources :test_two
+  end
 
-  root to: "questions#index"
+  root to: "questions/test_one#index"
 end

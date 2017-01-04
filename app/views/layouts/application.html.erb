@@ -34,6 +34,7 @@
                   <ul class="nav navbar-nav navbar-right">      
                     <% if login_signed_in?  && current_login.admin %>
                       <!-- <li>Logged in as <strong><%= current_login.email %></strong></li> -->
+                      <li><%#= link_to "Sign Up", new_login_registration_path, method: :get, :class => 'navbar-link' %></li>
                       <li><%= link_to "Answers", answers_answers_path, method: :get, :class => 'navbar-link' %>
                       <li><%= link_to "Logout", destroy_login_session_path, method: :delete, :class => 'navbar-link'  %></li>
                     <% else %>

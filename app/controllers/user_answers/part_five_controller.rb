@@ -1,4 +1,5 @@
 class UserAnswers::PartFiveController < ApplicationController
+	skip_before_action :authenticate_login!
 	def index
 	end
 
@@ -12,7 +13,7 @@ class UserAnswers::PartFiveController < ApplicationController
 	end
 
 	def create
-		@login = current_login
+		@login = User.find(params[:user_id])
 		UserAnswer.transaction do
 			begin
 				params[:user_answer].each do |key, value|
@@ -30,6 +31,9 @@ class UserAnswers::PartFiveController < ApplicationController
 						end
 					end
 				end
+				respond_to do |format|
+			    format.json { render json: {"value" => UserAnswer.build_html_table_from_data(@login.user_answers)}}
+			  end
 			rescue Exception => error
 				p "#{error}"
 			end

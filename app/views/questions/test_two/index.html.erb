@@ -1,5 +1,82 @@
 <%= form_for :user_answer, as: :user_answer, url: user_answers_part_one_index_path, method: :create do |f| %>
-	<div id="part_one">
+	<div id="user">
+		<div class="text-center">
+			<div class="col-md-5 col-md-offset-3">
+				<div class="panel panel-danger">
+				  <div class="panel-heading"><h4>Sign In</h4></div>
+				  <div class="panel-body">
+				  	<div class="col-md-12">
+					    <div class="row">
+								<div class="field">
+						      <%= f.label :first_name %><br />
+						      <%= f.text_field :first_name, autofocus: true, autocomplete: "off", id: "first_name", class: "form-control" %>
+						    </div>
+						  </div>
+						  <div class="row">
+						    <div class="field">
+						      <%= f.label :last_name %><br />
+						      <%= f.text_field :last_name, autocomplete: "off", id: "last_name",  class: "form-control" %>
+						    </div>
+							</div>
+							<div class="row">
+						    <div class="field">
+						      <%= f.label :email %><br />
+						      <%= f.email_field :email, autocomplete: "off", id: "email",  class: "form-control" %>
+						      <%= f.hidden_field :user_id, id: "user_id" %>
+						    </div>
+						  </div>
+							<div class="row">
+							<%= link_to "Next", "#user", class: "btn btn-success next", id: "user" %>
+							</div>
+						</div>	
+				  </div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="writing_skills" style="display:none;">
+		<div class="row">
+			<div class="page-header">
+				<h4>Writing Skills:</h4>
+			</div>
+		</div>
+		<div class="row">
+			<p>
+				<div class="col-xs-12 col-sm-12 col-md-12">
+					Have you ever been employed with Endura Products? (Including temporary service)
+				</div>
+				<div class="col-xs-12 col-sm-12 col-md-12">
+					<%= f.text_field :answer, id: "part_6_question_1", size: 5, class: "form-control" %>
+				</div>
+			</p>
+			<br/>
+			<p>
+				<div class="col-xs-12 col-sm-12 col-md-12">
+					Do you have any family memebers, relatives, or significant others that work, have worked, or are planning to work or Endura? (i.e. husband, wife, child, brother, sister, aunt, uncle, niece, nephew, cousin, girlfriend, boyfriend or fiance)
+				</div>
+				<div class="col-xs-12 col-sm-12 col-md-12">
+					<%= f.text_field :answer, id: "part_6_question_2", size: 5, class: "form-control" %>
+				</div>
+			</p>
+			<br/>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12">
+				<p>
+					In the space provided below, please write how you are planning on benefitting the company, and what characteristics you have that differentiate yourself from other candidates.
+				</p>
+				<p><%= f.text_area :answer, id: "part_6_question_3", rows: 10, class: "form-control" %></p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="btn-group pull-right" role="group">
+				<%= link_to "Next", "#finish", class: "btn btn-success finish", id: "finish" %>
+			</div>
+		</div>
+	</div>
+
+	<div id="part_one", style="display: none;">
 		<div class="row">
 			<div class="page-header">
 				<h4>Part 1: Basic Math</h4>
@@ -52,7 +129,10 @@
 			</div>
 		<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md 12">
-					<%= link_to "Next", "#part_one", class: "btn btn-success pull-right next", id: "part_one" %>
+					<div class="btn-group pull-right" role="group">
+						<%= link_to "Back", "#part_one", class: "btn btn-danger prev" %>
+						<%= link_to "Next", "#part_one", class: "btn btn-success pull-right next", id: "part_one" %>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -445,22 +525,6 @@
 					<%= f.text_field :answer, id: "part_5_question_5", size: 5, class: "form-control" %>
 				</div>
 			</p>
-			<p>
-				<div class="col-xs-12 col-sm-12 col-md-12">
-					6. Have you ever been employed with Endura Products? (Including temporary service)
-				</div>
-				<div class="col-xs-12 col-sm-12 col-md-12">
-					<%= f.text_field :answer, id: "part_5_question_6", size: 5, class: "form-control" %>
-				</div>
-			</p>
-			<p>
-				<div class="col-xs-12 col-sm-12 col-md-12">
-					7. Do you have any family memebers, relatives, or significant others that work, have worked, or are planning to work or Endura? (i.e. husband, wife, child, brother, sister, aunt, uncle, niece, nephew, cousin, girlfriend, boyfriend or fiance)
-				</div>
-				<div class="col-xs-12 col-sm-12 col-md-12">
-					<%= f.text_field :answer, id: "part_5_question_7", size: 5, class: "form-control" %>
-				</div>
-			</p>
 		</div>
 		<div class="row">
 			<div class="btn-group pull-right" role="group">
@@ -470,36 +534,14 @@
 		</div>
 	</div>
 
-	<div id="writing_skills" style="display:none;">
-		<div class="row">
-			<div class="page-header">
-				<h4>Writing Skills:</h4>
-			</div>
-		</div>
-		<div class="row">
-			<p>
-				In the space provided below, please write how you are planning on benefitting the company, and what characteristics you have that differentiate yourself from other candidates.
-			</p>
-		</div>
-		<div class="row">
-			<p><%= f.text_area :answer, id: "part_6_question_1", rows: 10, class: "form-control" %></p>
-		</div>
-		<div class="row">
-			<div class="btn-group pull-right" role="group">
-				<%= link_to "Back", "#writing_skills", class: "btn btn-danger prev" %>
-				<%= link_to "Finish", "#finish", class: "btn btn-success finish", id: "finish" %>
-			</div>
-		</div>
-	</div>
-
-	<div id="finish" style="display:none;">
+	<div id="done" style="display:none;">
 		<div id="finishTable">
 		</div>
 
 		<div class="row">
 			<div class="btn-group pull-right" role="group">
-				<%= link_to "Back", '#finish', class: "btn btn-danger prev" %>
-				<%= link_to "Complete", user_answers_finish_path(1), method: :delete, class: "btn btn-success done" %>
+				<%= link_to "Back", '#done', class: "btn btn-danger prev" %>
+				<%= link_to "Complete", '#done', class: "btn btn-success done", id: "done" %>
 			</div>
 		</div>
 	</div>

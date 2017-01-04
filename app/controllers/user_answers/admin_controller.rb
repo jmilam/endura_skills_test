@@ -1,10 +1,11 @@
 class UserAnswers::AdminController < ApplicationController
+	skip_before_action :authenticate_login!
 	def index
-		@logins = Hash.new
-		Login.all.each do |login|
-			correct_count = UserAnswer.calculate_correct_count(login.user_answers)
+		@users = Hash.new
+		User.all.each do |user|
+			correct_count = UserAnswer.calculate_correct_count(user.user_answers)
 			total_answers = Answer.all.count
-			@logins["#{login.email}"] = {id: login.id, correct_count: correct_count, total_answers: total_answers, percent: UserAnswer.calculate_percent(correct_count, total_answers), completed_date: login.completed_date}
+			@users["#{user.email}"] = {id: user.id, correct_count: correct_count, total_answers: total_answers, percent: UserAnswer.calculate_percent(correct_count, total_answers), completed_date: user.completed_date}
 		end
 	end
 

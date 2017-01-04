@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  before_action :authenticate_login!, :stringify_num, :stringify_part_num
+  before_action :authenticate_login!
+  before_action :stringify_num, :stringify_part_num
 
   def stringify_num
   	@stringify_num = { "one" => "1", "two"=> "2", "three" => "3", "four" => "4", "five" => "5", "six" => "6", "seven" => "7", "eight" => "8",

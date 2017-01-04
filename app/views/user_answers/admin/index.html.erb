@@ -9,7 +9,7 @@
 		</tr>
 	</thead>
 	<tbody>
-		<% @logins.each do |email, values| %>
+		<% @users.each do |email, values| %>
 			<tr>
 				<td><%= link_to email, user_answers_finish_path(values[:id])  %></td>
 				<td><%= values[:correct_count] %></td>

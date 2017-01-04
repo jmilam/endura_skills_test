@@ -1,0 +1,548 @@
+<%= form_for :user_answer, as: :user_answer, url: user_answers_part_one_index_path, method: :create do |f| %>
+	<div id="user">
+		<div class="text-center">
+			<div class="col-md-5 col-md-offset-3">
+				<div class="panel panel-danger">
+				  <div class="panel-heading"><h4>Sign In</h4></div>
+				  <div class="panel-body">
+				  	<div class="col-md-12">
+					    <div class="row">
+								<div class="field">
+						      <%= f.label :first_name %><br />
+						      <%= f.text_field :first_name, autofocus: true, autocomplete: "off", id: "first_name", class: "form-control" %>
+						    </div>
+						  </div>
+						  <div class="row">
+						    <div class="field">
+						      <%= f.label :last_name %><br />
+						      <%= f.text_field :last_name, autocomplete: "off", id: "last_name",  class: "form-control" %>
+						    </div>
+							</div>
+							<div class="row">
+						    <div class="field">
+						      <%= f.label :email %><br />
+						      <%= f.email_field :email, autocomplete: "off", id: "email",  class: "form-control" %>
+						      <%= f.hidden_field :user_id, id: "user_id" %>
+						    </div>
+						  </div>
+							<div class="row">
+								<%= link_to "Next", "#user", class: "btn btn-success next", id: "user" %>
+							</div>
+						</div>	
+				  </div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="writing_skills" style="display:none;">
+		<div class="row">
+			<div class="page-header">
+				<h4>Writing Skills:</h4>
+			</div>
+		</div>
+		<div class="row">
+			<p>
+				<div class="col-xs-12 col-sm-12 col-md-12">
+					Have you ever been employed with Endura Products? (Including temporary service) <div class="validation_msg"></div>
+				</div>
+				<div class="col-xs-12 col-sm-12 col-md-12">
+					<%= f.text_field :answer, id: "part_6_question_1", size: 5, class: "form-control" %>
+				</div>
+			</p>
+			<br/>
+			<p>
+				<div class="col-xs-12 col-sm-12 col-md-12">
+					Do you have any family memebers, relatives, or significant others that work, have worked, or are planning to work or Endura? (i.e. husband, wife, child, brother, sister, aunt, uncle, niece, nephew, cousin, girlfriend, boyfriend or fiance) <div class="validation_msg"></div>
+				</div>
+				<div class="col-xs-12 col-sm-12 col-md-12">
+					<%= f.text_field :answer, id: "part_6_question_2", size: 5, class: "form-control" %>
+				</div>
+			</p>
+			<br/>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12">
+				<p>
+					In the space provided below, please write how you are planning on benefitting the company, and what characteristics you have that differentiate yourself from other candidates.
+				</p>
+				<p><%= f.text_area :answer, id: "part_6_question_3", rows: 10, class: "form-control" %></p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="btn-group pull-right" role="group">
+				<%= link_to "Next", "#finish", class: "btn btn-success finish", id: "finish" %>
+			</div>
+		</div>
+	</div>
+
+	<div id="part_one", style="display: none;">
+		<div class="row">
+			<div class="page-header">
+				<h4>Part 1: Basic Math</h4>
+			</div>
+		</div>
+		<div class="row">
+			<div class="row">
+			  <div class="col-xs-12 col-sm-12 col-md-3">
+			  	1) 138 + 25 = <%= f.text_field :answer, id: "part_1_question_1" , size: 5, class: "pull-right part_one" %>
+			  </div>
+			  <div class="col-xs-12 col-sm-12 col-md-3">
+			  	2) 22 + 1579 = <%= f.text_field :answer, id: "part_1_question_2", size: 5, class: "pull-right part_one" %>
+			  </div>
+			  <div class="col-xs-12 col-sm-12 col-md-3">
+			  	3) 177 - 89 = <%= f.text_field :answer, id: "part_1_question_3", size: 5, class: "pull-right part_one" %>
+			  </div>
+			  <div class="col-xs-12 col-sm-12 col-md-3">
+			  	4) 120 - 73 = <%= f.text_field :answer, id: "part_1_question_4", size: 5, class: "pull-right part_one" %>
+			  </div>
+			</div>
+
+			<div class="row" style="padding-top: 20px;">
+			  <div class="col-xs-12 col-sm-12 col-md-3">
+			  	5) 633 - 401 = <%= f.text_field :answer, id: "part_1_question_5", size: 5, class: "pull-right part_one" %>
+			  </div>
+			  <div class="col-xs-12 col-sm-12 col-md-3">
+			  	6) 6965 - 3261 = <%= f.text_field :answer, id: "part_1_question_6", size: 5, class: "pull-right part_one" %>
+			  </div>
+			  <div class="col-xs-12 col-sm-12 col-md-3">
+			  	7) 28 x 3 = <%= f.text_field :answer, id: "part_1_question_7", size: 5, class: "pull-right part_one" %>
+			  </div>
+			  <div class="col-xs-12 col-sm-12 col-md-3">
+			  	8) 336 x 5 = <%= f.text_field :answer, id: "part_1_question_8", size: 5, class: "pull-right part_one" %>
+			  </div>
+			</div>
+
+			<div class="row" style="padding-top: 20px;">
+			  <div class="col-xs-12 col-sm-12 col-md-3">
+			  	9) 70 x 4 = <%= f.text_field :answer, id: "part_1_question_9", size: 5, class: "pull-right part_one" %>
+			  </div>
+			  <div class="col-xs-12 col-sm-12 col-md-3">
+			  	10) 265 / 5 = <%= f.text_field :answer, id: "part_1_question_10", size: 5, class: "pull-right part_one" %>
+			  </div>
+			  <div class="col-xs-12 col-sm-12 col-md-3">
+			  	11) 154 / 14 = <%= f.text_field :answer, id: "part_1_question_11", size: 5, class: "pull-right part_one" %>
+			  </div>
+			  <div class="col-xs-12 col-sm-12 col-md-3">
+			  	12) 204 / 17 = <%= f.text_field :answer, id: "part_1_question_12", size: 5, class: "pull-right part_one" %>
+			  </div>
+			</div>
+		<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md 12">
+					<div class="btn-group pull-right" role="group">
+						<%= link_to "Back", "#part_one", class: "btn btn-danger prev" %>
+						<%= link_to "Next", "#part_one", class: "btn btn-success pull-right next", id: "part_one" %>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="part_two" style="display:none;">
+		<div class="row">
+			<div class="page-header">
+				<h4>Part 2: Reasoning Skills</h4>
+			</div>
+		</div>
+
+	  <div class="row">
+		  <div class="col-xs-12 col-sm-6 col-md-6">
+		  	<div class="row">
+		    	1) How many boxes are pictured?
+		  	</div>
+		  	<div class="row">
+		  		<%= image_tag "box_triangle.png", width: "300", height: "200" %>
+		  	</div>
+		  	<div class="row">
+		  		<div class="col-xs-2 col-sm-2 col-md-2">
+				  	<%= radio_button 'part_two_quest_one', 'part_two_quest_one', "36", class: "part_two_question_one" %> 36
+				  </div>
+				  <div class="col-xs-2 col-sm-2 col-md-2">
+				  	<%= radio_button 'part_two_quest_one', 'part_two_quest_one', "30", class: "part_two_question_one" %> 30
+				  </div>
+				  <div class="col-xs-2 col-sm-2 col-md-2">
+				  	<%= radio_button 'part_two_quest_one', 'part_two_quest_one', "28", class: "part_two_question_one" %> 28
+				  </div>
+		  	</div>
+		  </div>
+		  <div class="col-xs-12 col-sm-6 col-md-6">
+		  	<div class="row">
+		  		2) How many boes are pictured?
+		  	</div>
+		  	<div class="row">
+		  	<%= image_tag "cube.png", width: "200", height: "200" %>
+		  	</div>
+		  	<div class="row">
+				  <div class="col-xs-2 col-sm-2 col-md-2">
+		  			<%= radio_button 'part_two_quest_two', 'part_two_quest_two', "30", class: "part_two_question_two" %> 30
+				  </div>
+				  <div class="col-xs-2 col-sm-2 col-md-2">
+				  	<%= radio_button 'part_two_quest_two', 'part_two_quest_two', "18", class: "part_two_question_two" %> 18
+				  </div>
+				  <div class="col-xs-2 col-sm-2 col-md-2">
+				  	<%= radio_button 'part_two_quest_two', 'part_two_quest_two', "27", class: "part_two_question_two" %> 27
+				  </div>
+		  	</div>
+		  </div>
+		  <div class="row">
+				<div class="btn-group pull-right" role="group">
+					<%= link_to "Back", "#part_two", class: "btn btn-danger prev" %>
+					<%= link_to "Next", "#part_two", class: "btn btn-success next", id: "part_two" %>
+				</div>
+			</div>
+	  </div>
+	</div>
+
+	<div id="part_three"  style="display:none;">
+		<div class="row">
+			<div class="page-header">
+				<h4>Part 3: Tape Measure</h4>
+			</div>
+		</div>
+
+		<div class="row text-center">
+			<div class="col-xs-12 col-sm-12 col-md-12">
+		    <%= image_tag "ruler.png" %>
+		  </div>
+		</div>
+
+	  <div class="row">
+		  <div class="col-xs-12 col-sm-12 col-md-12">
+		    Circle the correct answer for each letter listed above.
+		  </div>
+		</div>
+		<div class="row">
+	    <div class="col-xs-12 col-sm-12 col-md-12">
+	    	<div class="row">
+	    	<b>A)</b>
+	    	</div>
+	    	<div class="row">
+	    		<div class="col-xs-12 col-sm-6 col-md-3">
+	    			<%= radio_button 'part_three_quest_a', 'part_three_quest_a', "1 1/4", class: 'part_three_question_a' %> 1 1/4 
+	    		</div>
+	    		<div class="col-xs-12 col-sm-6 col-md-3">
+			    	<%= radio_button 'part_three_quest_a', 'part_three_quest_a', "1 1/2", class: 'part_three_question_a' %> 1 1/2
+			    </div>
+			    <div class="col-xs-12 col-sm-6 col-md-3">
+			    	<%= radio_button 'part_three_quest_a', 'part_three_quest_a', "1 3/8", class: 'part_three_question_a' %> 1 3/8
+			    </div>
+			    <div class="col-xs-12 col-sm-6 col-md-3">
+			    	<%= radio_button 'part_three_quest_a', 'part_three_quest_a', "2", class: 'part_three_question_a' %> 2
+			    </div>
+	    	</div>
+	    </div>
+	  </div>
+
+	  <div class="row">
+	  	<div class="col-xs-12 col-sm-12 col-md-12">
+	    	<div class="row">
+	    	<b>B)</b>
+	    	</div>
+	    	<div class="row">
+	    		<div class="col-xs-12 col-sm-6 col-md-3">
+	    			<%= radio_button 'part_three_quest_b', 'part_three_quest_b', "2 3/4", class: 'part_three_question_b' %> 2 3/4 
+	    		</div>
+	    		<div class="col-xs-12 col-sm-6 col-md-3">
+			    	<%= radio_button 'part_three_quest_b', 'part_three_quest_b', "2 1/2", class: 'part_three_question_b' %> 2 1/2
+			    </div>
+			    <div class="col-xs-12 col-sm-6 col-md-3">
+			    	<%= radio_button 'part_three_quest_b', 'part_three_quest_b', "3", class: 'part_three_question_b' %> 3
+			    </div>
+			    <div class="col-xs-12 col-sm-6 col-md-3">
+			    	<%= radio_button 'part_three_quest_b', 'part_three_quest_b', "3 1/8", class: 'part_three_question_b' %> 3 1/8
+			    </div>
+	    	</div>
+	    </div>
+	  </div>
+
+	  <div class="row">
+		  <div class="col-xs-12 col-sm-12 col-md-12">
+	    	<div class="row">
+	    	<b>C)</b>
+	    	</div>
+	    	<div class="row">
+	    		<div class="col-xs-12 col-sm-6 col-md-3">
+	    			<%= radio_button 'part_three_quest_c', 'part_three_quest_c', "3", class: 'part_three_question_c' %> 3
+	    		</div>
+	    		<div class="col-xs-12 col-sm-6 col-md-3">
+			    	<%= radio_button 'part_three_quest_c', 'part_three_quest_c', "3 1/2", class: 'part_three_question_c' %> 3 1/2
+			    </div>
+			    <div class="col-xs-12 col-sm-6 col-md-3">
+			    	<%= radio_button 'part_three_quest_c', 'part_three_quest_c', "1 1/2", class: 'part_three_question_c' %> 1 1/2
+			    </div>
+			    <div class="col-xs-12 col-sm-6 col-md-3">
+			    	<%= radio_button 'part_three_quest_c', 'part_three_quest_c', "3 1/4", class: 'part_three_question_c' %> 3 1/4
+			    </div>
+	    	</div>
+	    </div>
+	  </div>
+
+	  <div class="row">
+		  <div class="col-xs-12 col-sm-12 col-md-12">
+	    	<div class="row">
+	    	<b>D)</b>
+	    	</div>
+	    	<div class="row">
+	    		<div class="col-xs-12 col-sm-6 col-md-3">
+	    			<%= radio_button 'part_three_quest_d', 'part_three_quest_d', "1 1/4", class: 'part_three_question_d' %> 1 1/4 
+	    		</div>
+	    		<div class="col-xs-12 col-sm-6 col-md-3">
+			    	<%= radio_button 'part_three_quest_d', 'part_three_quest_d', "3/4", class: 'part_three_question_d' %> 3/4
+			    </div>
+			    <div class="col-xs-12 col-sm-6 col-md-3">
+			    	<%= radio_button 'part_three_quest_d', 'part_three_quest_d', "1 3/8", class: 'part_three_question_d' %> 1 3/8
+			    </div>
+			    <div class="col-xs-12 col-sm-6 col-md-3">
+			    	<%= radio_button 'part_three_quest_d', 'part_three_quest_d', "1", class: 'part_three_question_d' %> 1
+			    </div>
+	    	</div>
+	    </div>
+	  </div>
+
+	  <div class="row">
+		  <div class="col-xs-12 col-sm-12 col-md-12">
+	    	<div class="row">
+	    	<b>E)</b>
+	    	</div>
+	    	<div class="row">
+	    		<div class="col-xs-12 col-sm-6 col-md-3">
+	    			<%= radio_button 'part_three_quest_e', 'part_three_quest_e', "2 1/4", class: 'part_three_question_e' %> 2 1/4 
+	    		</div>
+	    		<div class="col-xs-12 col-sm-6 col-md-3">
+			    	<%= radio_button 'part_three_quest_e', 'part_three_quest_e', "2", class: 'part_three_question_e' %> 2
+			    </div>
+			    <div class="col-xs-12 col-sm-6 col-md-3">
+			    	<%= radio_button 'part_three_quest_e', 'part_three_quest_e', "3", class: 'part_three_question_e' %> 3
+			    </div>
+			    <div class="col-xs-12 col-sm-6 col-md-3">
+			    	<%= radio_button 'part_three_quest_e', 'part_three_quest_e', "3 1/4", class: 'part_three_question_e' %> 3 1/4
+			    </div>
+	    	</div>
+	    </div>
+	  </div>
+
+	  <div class="row">
+		  <div class="col-xs-12 col-sm-12 col-md-12">
+	    	<div class="row">
+	    	<b>F)</b>
+	    	</div>
+	    	<div class="row">
+	    		<div class="col-xs-12 col-sm-6 col-md-3">
+	    			<%= radio_button 'part_three_quest_f', 'part_three_quest_f', "2 3/4", class: 'part_three_question_f' %> 2 3/4
+	    		</div>
+	    		<div class="col-xs-12 col-sm-6 col-md-3">
+			    	<%= radio_button 'part_three_quest_f', 'part_three_quest_f', "3 3/32", class: 'part_three_question_f' %> 3 3/32
+			    </div>
+			    <div class="col-xs-12 col-sm-6 col-md-3">
+			    	<%= radio_button 'part_three_quest_f', 'part_three_quest_f', "3", class: 'part_three_question_f' %> 3
+			    </div>
+			    <div class="col-xs-12 col-sm-6 col-md-3">
+			    	<%= radio_button 'part_three_quest_f', 'part_three_quest_f', "3 1/8", class: 'part_three_question_f' %> 3 1/8
+			    </div>
+	    	</div>
+	    </div>
+		  <div class="row">
+				<div class="btn-group pull-right" role="group">
+					<%= link_to "Back", "#part_three", class: "btn btn-danger prev" %>
+					<%= link_to "Next", "#part_three", class: "btn btn-success next", id: "part_three" %>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="part_four"  style="display:none;">
+		<div class="row">
+			<div class="page-header">
+				<h4>Part 4:</h4>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-12 col-sm-6 col-md-6">
+				<div class="row">
+			  	Rank the numbers below from smallest to largest.
+			  </div>
+			  <div class="row">
+			  	<div class="col-xs-6 col-sm-6 col-md-6">
+				  	1) 5723852 
+				  </div>
+				  <div class="col-xs-6 col-sm-6 col-md-6">
+				  	<%= f.text_field :answer, id: "part_4_question_1_a", size: 5, class: "pull-left" %>
+				  </div>
+				  <div class="col-xs-6 col-sm-6 col-md-6">
+				  	2) 8456812 
+				  </div>
+				  <div class="col-xs-6 col-sm-6 col-md-6">
+				  	<%= f.text_field :answer, id: "part_4_question_1_b", size: 5, class: "pull-left" %>
+				  </div>
+				  <div class="col-xs-6 col-sm-6 col-md-6">
+				  	3) 1859756 
+				  </div>
+				  <div class="col-xs-6 col-sm-6 col-md-6">
+				  	<%= f.text_field :answer, id: "part_4_question_1_c", size: 5, class: "pull-left" %>
+				  </div>
+				  <div class="col-xs-6 col-sm-6 col-md-6">
+				  	4) 7575757 
+				  </div>
+				  <div class="col-xs-6 col-sm-6 col-md-6">
+				  	<%= f.text_field :answer, id: "part_4_question_1_d", size: 5, class: "pull-left" %>
+				  </div>
+				  <div class="col-xs-6 col-sm-6 col-md-6">
+				  	5) 7755775 
+				  </div>
+				  <div class="col-xs-6 col-sm-6 col-md-6">
+				  	<%= f.text_field :answer, id: "part_4_question_1_e", size: 5, class: "pull-left" %>
+				  </div>
+				  <div class="col-xs-6 col-sm-6 col-md-6">
+				  	6) 3733773 
+				  </div>
+				  <div class="col-xs-6 col-sm-6 col-md-6">
+				  	<%= f.text_field :answer, id: "part_4_question_1_f", size: 5, class: "pull-left" %>
+				  </div>
+			  </div>
+			</div>
+			<div class="col-xs-12 col-sm-6 col-md-6">
+				<div class="row">
+			  	Convert the following fractions to decimals:
+			  </div>
+			  <div class="row">
+			  	<div class="col-xs-6 col-sm-6 col-md-6">
+				  	7) 1/5
+				  </div>
+				  <div class="col-xs-6 col-sm-6 col-md-6">
+				  	<%= f.text_field :answer, id: "part_4_question_2_a", size: 5, class: "pull-left" %>
+				  </div>
+				  <div class="col-xs-6 col-sm-6 col-md-6">
+				  	8) 3/4 
+				  </div>
+				  <div class="col-xs-6 col-sm-6 col-md-6">
+				  	<%= f.text_field :answer, id: "part_4_question_2_b", size: 5, class: "pull-left" %>
+				  </div>
+				  <div class="col-xs-6 col-sm-6 col-md-6">
+				  	9) 5/8 
+				  </div>
+				  <div class="col-xs-6 col-sm-6 col-md-6">
+				  	<%= f.text_field :answer, id: "part_4_question_2_c", size: 5, class: "pull-left" %>
+				  </div>
+				  <div class="col-xs-6 col-sm-6 col-md-6">
+				  	10) 1/2 
+				  </div>
+				  <div class="col-xs-6 col-sm-6 col-md-6">
+				  	<%= f.text_field :answer, id: "part_4_question_2_d", size: 5, class: "pull-left" %>
+				  </div>
+				  <div class="col-xs-6 col-sm-6 col-md-6">
+				  	11) 1/16 
+				  </div>
+				  <div class="col-xs-6 col-sm-6 col-md-6">
+				  	<%= f.text_field :answer, id: "part_4_question_2_e", size: 5, class: "pull-left" %>
+				  </div>
+				  <div class="col-xs-6 col-sm-6 col-md-6">
+				  	12) 1/4 
+				  </div>
+				  <div class="col-xs-6 col-sm-6 col-md-6">
+				  	<%= f.text_field :answer, id: "part_4_question_2_f", size: 5, class: "pull-left" %>
+				  </div>
+				  <div class="col-xs-6 col-sm-6 col-md-6">
+				  	13) 1/8 
+				  </div>
+				  <div class="col-xs-6 col-sm-6 col-md-6">
+				  	<%= f.text_field :answer, id: "part_4_question_2_g", size: 5, class: "pull-left" %>
+				  </div>
+			  </div>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-12">
+				<div class="row">
+			  	Which truck willturn over more easily?
+			  </div>
+			  <div class="row">
+			  	<div class="col-xs-12 col-sm-12 col-md-3">
+				  	<%= image_tag "truck.png" %>
+				  </div>
+				  <div class="col-xs-12 col-sm-12 col-md-3">
+				  	<%= radio_button 'part_four_quest_3', 'part_four_quest_3', "A", class: "part_4_question_3" %> A
+				  </div>
+				  <div class="col-xs-12 col-sm-12 col-md-3">
+				  	<%= radio_button 'part_four_quest_3', 'part_four_quest_3', "B", class: "part_4_question_3" %> B
+				  </div>
+				  <div class="col-xs-12 col-sm-12 col-md-3">
+				  	<%= radio_button 'part_four_quest_3', 'part_four_quest_3', "C", class: "part_4_question_3" %> C (if no difference)
+				  </div>
+			  </div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="btn-group pull-right" role="group">
+				<%= link_to "Back", "#part_four", class: "btn btn-danger prev" %>
+				<%= link_to "Next", "#part_four", class: "btn btn-success next", id: "part_four" %>
+			</div>
+		</div>
+	</div>
+
+	<div id="part_five"  style="display:none;">
+		<div class="row">
+			<div class="page-header">
+				<h4>Part 5:</h4>
+			</div>
+		</div>
+		<div class="row">
+			<p>
+				<div class="col-xs-12 col-sm-12 col-md-12">
+					1. Kayla wants to buy a phone that costs $211, a phone case that costs $35, and a screen protector that costs $22. She has saved $185 from her allowance, and her uncle gave her $50.How much more money does Kayla need to buy the phone, phone case, and screen protector?
+				</div>
+				<div class="col-xs-12 col-sm-12 col-md-12">
+					<%= f.text_field :answer, id: "part_5_question_1", size: 5, class: "form-control" %>
+				</div>
+			</p>
+			<p>
+				<div class="col-xs-12 col-sm-12 col-md-12">
+					2. For breakfast, Pamela bought a waffle for $2.50, syrup for $0.75 and an apple juice for $2.25. At lunch, Pamela spent $7.05 on a pizza and $1.55 on a soda. How much more money did Pamela spend on lunch than on breakfast?
+				</div>
+				<div class="col-xs-12 col-sm-12 col-md-12">
+					<%= f.text_field :answer, id: "part_5_question_2", size: 5, class: "form-control" %>
+				</div>
+			</p>
+			<p>
+				<div class="col-xs-12 col-sm-12 col-md-12">
+					3. For a school fundraiser, Jenna needs to sell 15 boes of cookies. So far, she has sold 25 boxes to her grandmother, 55 boxes to her mother, and 10 boxes to a neighbor. How many more boxes of cookies does Jenna need to sell?
+				</div>
+				<div class="col-xs-12 col-sm-12 col-md-12">
+					<%= f.text_field :answer, id: "part_5_question_3", size: 5, class: "form-control" %>
+				</div>
+			</p>
+			<p>
+				<div class="col-xs-12 col-sm-12 col-md-12">
+					4. There are 44 students on the soccer team and twice that number on the football team. tere are 18 boys and 17 girls on the track team. If each student only participates in one sport, how many students total are there on the soccer, football, and track teams?
+				</div>
+				<div class="col-xs-12 col-sm-12 col-md-12">
+					<%= f.text_field :answer, id: "part_5_question_4", size: 5, class: "form-control" %>
+				</div>
+			</p>
+			<p>
+				<div class="col-xs-12 col-sm-12 col-md-12">
+					5. A group of 4 adults and 6 children are going to the science center. Child tickets cost $12, and adult tickets cost $. How much will the tickets cost in all?
+				</div>
+				<div class="col-xs-12 col-sm-12 col-md-12">
+					<%= f.text_field :answer, id: "part_5_question_5", size: 5, class: "form-control" %>
+				</div>
+			</p>
+		</div>
+		<div class="row">
+			<div class="btn-group pull-right" role="group">
+				<%= link_to "Back", "#part_five", class: "btn btn-danger prev" %>
+				<%= link_to "Next", "#part_five", class: "btn btn-success next", id: "part_five" %>
+			</div>
+		</div>
+	</div>
+
+	<div id="done" style="display:none;">
+		<div id="finishTable">
+		</div>
+
+		<div class="row">
+			<div class="btn-group pull-right" role="group">
+				<%= link_to "Back", '#done', class: "btn btn-danger prev" %>
+				<%= link_to "Complete", '#done', class: "btn btn-success done", id: "done" %>
+			</div>
+		</div>
+	</div>
+<% end %>
