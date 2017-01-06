@@ -2,8 +2,8 @@
 lock "3.7.1"
 server "192.168.3.131", port: 22, roles: [:web, :app, :db]
 
-set :repo_url, "git@github.com:jmilam/endura_dashboard.git"
-set :application, "endura_dashboard"
+set :repo_url, "git@github.com:jmilam/endura_skills_test.git"
+set :application, "endura_skill_test"
 set :user, "itadmin"
 
 set :use_sudo, false
