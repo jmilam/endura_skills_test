@@ -15,7 +15,7 @@ class UserAnswers::UserController < ApplicationController
 	def create
 		begin
 				login = params["login"]
-				user = User.create(first_name: login["first_name"], last_name: login["last_name"], email: login["email"])
+				user = User.create(first_name: login["first_name"], last_name: login["last_name"], email: login["email"], test_num: login["test_num"])
 				respond_to do |format|
    			  format.json { render json: {"user_id" => user.id}}
    			end
@@ -28,6 +28,17 @@ class UserAnswers::UserController < ApplicationController
 	end
 
 	def destroy
+		user = User.find(params[:id])
+		p UserAnswer.all.count
+		
+		if user.delete
+			p UserAnswer.all.count
+			flash[:notice] = "User, and user answers, have been deleted."		
+		else
+			flash[:error] = "There was and error when deleting user. Please contact IT."
+		end
+		redirect_to user_answers_admin_index_path
+
 	end
 
 	private

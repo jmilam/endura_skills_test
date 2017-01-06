@@ -4,7 +4,7 @@ class UserAnswers::AdminController < ApplicationController
 		@users = Hash.new
 		User.all.each do |user|
 			correct_count = UserAnswer.calculate_correct_count(user.user_answers)
-			total_answers = Answer.all.count
+			total_answers = Answer.where(test_num: user.test_num).count
 			@users["#{user.email}"] = {id: user.id, correct_count: correct_count, total_answers: total_answers, percent: UserAnswer.calculate_percent(correct_count, total_answers), completed_date: user.completed_date}
 		end
 	end

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   namespace :answers do 
   	resources :answers
   end
+
   namespace :user_answers do
   	resources :part_one 
     resources :part_two
@@ -14,10 +15,12 @@ Rails.application.routes.draw do
     resources :admin
     resources :user
   end
+
   namespace :questions do
+    resources :test_router
     resources :test_one
     resources :test_two
   end
 
-  root to: "questions/test_one#index"
+  root to: "questions/test_router#index"
 end

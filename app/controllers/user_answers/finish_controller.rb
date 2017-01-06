@@ -6,10 +6,15 @@ class UserAnswers::FinishController < ApplicationController
 	end
 
 	def show
-		@user = User.find(params[:id])
-		@user_answers = Array.new
-		@user.user_answers.each do |user_answer|
-			@user_answers << UserAnswer.format_user_answers(user_answer)
+		p @user = User.find(params[:id])
+		if @user.complete == false || @user.complete == nil
+			flash[:error] = "User has not completed test. No results to view."
+			redirect_to user_answers_admin_index_path
+		else
+			@user_answers = Array.new
+			@user.user_answers.each do |user_answer|
+				@user_answers << UserAnswer.format_user_answers(user_answer)
+			end
 		end
 	end
 

@@ -18,4 +18,22 @@
 //= require_tree .
 
 
-  
+$(document).on('turbolinks:load', function(){
+	var test_num = $('#test_num').val();
+	if (test_num == "1" ){ 
+
+		$('#test_one').css('display', 'block');
+	}
+	else if (test_num == "2") {
+		$('#test_two').css('display', 'block');
+	}
+	else {
+
+	}
+
+	setInterval(function() {
+    	$('.alert').alert('close');
+	}, 5000);
+});
+
+$('.alert')

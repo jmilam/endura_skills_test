@@ -13,8 +13,9 @@ submitForm = (form_id) ->
     first_name = $("#first_name").val()
     last_name = $("#last_name").val()
     email = $("#email").val()
+    test_num = $("#test_num").val()
 
-    send_data = {login: {first_name: first_name, last_name: last_name, email: email}}
+    send_data = {login: {first_name: first_name, last_name: last_name, email: email, test_num: test_num}}
 
   else if form_id is 'part_one'
     question_1 = $("#part_1_question_1").val()
@@ -147,7 +148,6 @@ submitForm = (form_id) ->
       data: send_data
       success: (data) ->
         if part_num is 'part_five'
-          alert data["value"]
           buildFinishTable(data["value"])
         else if part_num is 'user'
           $('#user_id').val(data["user_id"])

@@ -54,6 +54,6 @@ class Answers::AnswersController < ApplicationController
 	private
 
 	def answer_params
-		params.require(:answer).permit(:part_num, :question_num, :answer)
+		params.require(:answer).permit(:part_num, :question_num, :answer, :test_num)
 	end
 end

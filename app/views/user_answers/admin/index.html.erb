@@ -1,3 +1,17 @@
+<div class="row">
+  <% if flash[:notice] %>
+    <div class="alert alert-success alert-dismissible" role="alert">
+    	<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    	<strong>Succes!</strong> <%= flash[:notice] %>
+    </div>
+  <% elsif flash[:error] %>
+  	<div class="alert alert-danger alert-dismissible" role="alert">
+    	<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    	<string>Error!</string> <%= flash[:error] %>
+    </div>
+  <% end %>
+</div>
+
 <table class="table table">
 	<thead>
 		<tr>
@@ -6,6 +20,7 @@
 			<th>Total Questions</th>
 			<th>Percent</th>
 			<th>Completed date</th>
+			<th/>
 		</tr>
 	</thead>
 	<tbody>
@@ -16,6 +31,7 @@
 				<td><%= values[:total_answers] %></td>
 				<td><%= values[:percent] %></td>
 				<td><%= values[:completed_date].strftime("%m/%d/%Y") unless values[:completed_date].nil? %></td>
+				<td><%= link_to "Delete", user_answers_user_path(values[:id]), method: :delete %></td>
 			</tr>
 		<% end %>
 	</tbody>

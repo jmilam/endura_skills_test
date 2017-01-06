@@ -23,10 +23,11 @@
 						      <%= f.label :email %><br />
 						      <%= f.email_field :email, autocomplete: "off", id: "email",  class: "form-control" %>
 						      <%= f.hidden_field :user_id, id: "user_id" %>
+						      <%= f.hidden_field :test_num, id: "test_num", val: "2" %>
 						    </div>
 						  </div>
 							<div class="row">
-							<%= link_to "Next", "#user", class: "btn btn-success next", id: "user" %>
+								<%= link_to "Next", "#user", class: "btn btn-success next", id: "user" %>
 							</div>
 						</div>	
 				  </div>
@@ -85,13 +86,13 @@
 		<div class="row">
 			<div class="row">
 			  <div class="col-xs-12 col-sm-12 col-md-3">
-			  	1) 138 + 25 = <%= f.text_field :answer, id: "part_1_question_1" , size: 5, class: "pull-right part_one" %>
+			  	1) 633 - 401 = <%= f.text_field :answer, id: "part_1_question_1", size: 5, class: "pull-right part_one" %>
 			  </div>
 			  <div class="col-xs-12 col-sm-12 col-md-3">
 			  	2) 22 + 1579 = <%= f.text_field :answer, id: "part_1_question_2", size: 5, class: "pull-right part_one" %>
 			  </div>
 			  <div class="col-xs-12 col-sm-12 col-md-3">
-			  	3) 177 - 89 = <%= f.text_field :answer, id: "part_1_question_3", size: 5, class: "pull-right part_one" %>
+			  	3) 204 / 17 = <%= f.text_field :answer, id: "part_1_question_3", size: 5, class: "pull-right part_one" %>
 			  </div>
 			  <div class="col-xs-12 col-sm-12 col-md-3">
 			  	4) 120 - 73 = <%= f.text_field :answer, id: "part_1_question_4", size: 5, class: "pull-right part_one" %>
@@ -100,10 +101,10 @@
 
 			<div class="row" style="padding-top: 20px;">
 			  <div class="col-xs-12 col-sm-12 col-md-3">
-			  	5) 633 - 401 = <%= f.text_field :answer, id: "part_1_question_5", size: 5, class: "pull-right part_one" %>
+			  	5) 138 + 25 = <%= f.text_field :answer, id: "part_1_question_5" , size: 5, class: "pull-right part_one" %>
 			  </div>
 			  <div class="col-xs-12 col-sm-12 col-md-3">
-			  	6) 6965 - 3261 = <%= f.text_field :answer, id: "part_1_question_6", size: 5, class: "pull-right part_one" %>
+			  	6) 265 / 5 = <%= f.text_field :answer, id: "part_1_question_6", size: 5, class: "pull-right part_one" %>
 			  </div>
 			  <div class="col-xs-12 col-sm-12 col-md-3">
 			  	7) 28 x 3 = <%= f.text_field :answer, id: "part_1_question_7", size: 5, class: "pull-right part_one" %>
@@ -118,13 +119,13 @@
 			  	9) 70 x 4 = <%= f.text_field :answer, id: "part_1_question_9", size: 5, class: "pull-right part_one" %>
 			  </div>
 			  <div class="col-xs-12 col-sm-12 col-md-3">
-			  	10) 265 / 5 = <%= f.text_field :answer, id: "part_1_question_10", size: 5, class: "pull-right part_one" %>
+			  	10) 6965 - 3261 = <%= f.text_field :answer, id: "part_1_question_10", size: 5, class: "pull-right part_one" %>	
 			  </div>
 			  <div class="col-xs-12 col-sm-12 col-md-3">
 			  	11) 154 / 14 = <%= f.text_field :answer, id: "part_1_question_11", size: 5, class: "pull-right part_one" %>
 			  </div>
 			  <div class="col-xs-12 col-sm-12 col-md-3">
-			  	12) 204 / 17 = <%= f.text_field :answer, id: "part_1_question_12", size: 5, class: "pull-right part_one" %>
+			    12) 177 - 89 = <%= f.text_field :answer, id: "part_1_question_12", size: 5, class: "pull-right part_one" %>
 			  </div>
 			</div>
 		<div class="row">
@@ -202,7 +203,7 @@
 
 		<div class="row text-center">
 			<div class="col-xs-12 col-sm-12 col-md-12">
-		    <%= image_tag "ruler.png" %>
+		    <%= image_tag "ruler_2.png" %>
 		  </div>
 		</div>
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170104190024) do
+ActiveRecord::Schema.define(version: 20170106135227) do
 
   create_table "answers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "part_num"
@@ -68,6 +68,7 @@ ActiveRecord::Schema.define(version: 20170104190024) do
     t.string   "email"
     t.boolean  "complete"
     t.date     "completed_date"
+    t.string   "test_num"
   end
 
 end
