@@ -2,13 +2,13 @@
 lock "3.7.1"
 server "192.168.3.131", port: 22, roles: [:web, :app, :db]
 
-set :repo_url, "git@github.com:jmilam/endura_dashboard.git"
+set :repo_url, "git@github.com:jmilam/endura_skills_test.git"
 set :application, "endura_skills_test"
 set :user, "itadmin"
 
 set :use_sudo, false
 set :stage, :production
-set :deploy_via, :reomte_cache
+set :deploy_via, :remote_cache
 set :deploy_to, "/var/www/endura_skills_test"
 set :ssh_options,     { forward_agent: true, user: fetch(:user), keys: %w(~/.ssh/id_rsa.pub) }
 
