@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170106135227) do
+ActiveRecord::Schema.define(version: 20170110161738) do
 
   create_table "answers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "part_num"
@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 20170106135227) do
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
     t.boolean  "complete",               default: false
-    t.boolean  "admin",                  default: false
+    t.boolean  "admin",                  default: true
     t.date     "completed_date"
     t.index ["email"], name: "index_logins_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_logins_on_reset_password_token", unique: true, using: :btree
