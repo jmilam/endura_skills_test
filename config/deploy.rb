@@ -7,18 +7,13 @@ set :application, "endura_skills_test"
 set :user, "itadmin"
 
 set :use_sudo, false
-set :stage, :production
-set :deploy_via, :remote_cache
-set :deploy_to, "/var/www/endura_skills_test"
-set :ssh_options,     { forward_agent: true, user: fetch(:user), keys: %w(~/.ssh/id_rsa.pub) }
 
-# Default branch is :master
-set :scm, :git
-set :branch, "master"
+set :deploy_via, :remote_cache
+
+set :ssh_options,     { forward_agent: true, user: fetch(:user), keys: %w(~/.ssh/id_rsa.pub) }
 
 ## Defaults:
 set :scm,           :git
-set :branch,        :master
 # set :format,        :pretty
 # set :log_level,     :debug
 set :keep_releases, 5
