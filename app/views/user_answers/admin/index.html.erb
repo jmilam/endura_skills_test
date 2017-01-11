@@ -16,22 +16,26 @@
 	<thead>
 		<tr>
 			<th>User Email</th>
+			<th>First Name</th>
+			<th>Last Name</th>
 			<th>Total Correct</th>
 			<th>Total Questions</th>
 			<th>Percent</th>
 			<th>Completed date</th>
-			<th/>
+			<!-- <th/> !-->
 		</tr>
 	</thead>
 	<tbody>
 		<% @users.each do |email, values| %>
 			<tr>
 				<td><%= link_to email, user_answers_finish_path(values[:id])  %></td>
+				<td><%= values[:first_name] %></td>
+				<td><%= values[:last_name] %></td>
 				<td><%= values[:correct_count] %></td>
 				<td><%= values[:total_answers] %></td>
 				<td><%= values[:percent] %></td>
 				<td><%= values[:completed_date].strftime("%m/%d/%Y") unless values[:completed_date].nil? %></td>
-				<td><%= link_to "Delete", user_answers_user_path(values[:id]), method: :delete %></td>
+				<td><%#= link_to "Delete", user_answers_user_path(values[:id]), method: :delete %></td>
 			</tr>
 		<% end %>
 	</tbody>
