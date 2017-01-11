@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery with: :exception
+  #protect_from_forgery with: :exception
   before_action :authenticate_login!
   before_action :stringify_num, :stringify_part_num
 
