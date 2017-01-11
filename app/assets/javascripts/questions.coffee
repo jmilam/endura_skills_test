@@ -13,7 +13,7 @@ submitForm = (form_id) ->
     first_name = $("#first_name").val()
     last_name = $("#last_name").val()
     email = $("#email").val()
-    test_num = $("#test_num").val()
+    test_num = $("#test_num").attr('val')
 
     send_data = {login: {first_name: first_name, last_name: last_name, email: email, test_num: test_num}}
 
