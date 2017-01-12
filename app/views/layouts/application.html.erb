@@ -3,7 +3,7 @@
   <head>
     <title><%= @title.nil? ? "Endura Skills Test" : @title %></title>
     <%= csrf_meta_tags %>
-
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -26,8 +26,9 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a href="/" class="navbar-brand" >
+                  
                   <span><%= image_tag("endura-check.svg", height:"20", data: {title: "Endura"}) %></span>
-                  Endura
+                  <span>Endura</span>
                 </a>
               </div>
               <div class="navbar-collapse collapse">
