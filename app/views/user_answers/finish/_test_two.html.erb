@@ -20,7 +20,7 @@
 			<br/>
 			<p>
 				<div class="col-xs-12 col-sm-12 col-md-12">
-					Do you have any family memebers, relatives, or significant others that work, have worked, or are planning to work or Endura? (i.e. husband, wife, child, brother, sister, aunt, uncle, niece, nephew, cousin, girlfriend, boyfriend or fiance) <div class="validation_msg"></div>
+					Do you have any family members, relatives, or significant others that work, have worked, or are planning to work or Endura? (i.e. husband, wife, child, brother, sister, aunt, uncle, niece, nephew, cousin, girlfriend, boyfriend or fiance) <div class="validation_msg"></div>
 				</div>
 				<div class="col-xs-11 col-sm-11 col-md-11">
 					<%= text_field_tag :answer, UserAnswer.get_answer(6, 2, @user_answers,2), size: 5, class: "form-control", disabled: true %>
@@ -374,58 +374,58 @@
 			  </div>
 			  <div class="row">	
 					<div class="col-xs-5 col-sm-5 col-md-5">
-				  	1) 7575757 
+				  	1) 5723852
 				  </div>
 				  <div class="col-xs-5 col-sm-5 col-md-5">
 				  	<%= text_field_tag :answer, UserAnswer.get_answer(4, 4, @user_answers,2), size: 5, class: "pull-left form-control", disabled: true %>
 				  </div>
 				  <div class="col-xs-2 col-sm-2 col-md-2">
-						<%= UserAnswer.correct?(4, 4, @user_answers, 2) %>
+						<%= UserAnswer.correct?(4, 1, @user_answers, 2) %>
 					</div>
 				  <div class="col-xs-5 col-sm-5 col-md-5">
-				  	2) 1859756 
+				  	2) 8456812
 				  </div>
 				  <div class="col-xs-5 col-sm-5 col-md-5">
 				  	<%= text_field_tag :answer, UserAnswer.get_answer(4, 3, @user_answers,2), size: 5, class: "pull-left form-control", disabled: true %>
 				  </div>
 				  <div class="col-xs-2 col-sm-2 col-md-2">
-						<%= UserAnswer.correct?(4, 3, @user_answers, 2) %>
+						<%= UserAnswer.correct?(4, 2, @user_answers, 2) %>
 					</div>
 					<div class="col-xs-5 col-sm-5 col-md-5">
-				  	3) 3733773 
+				  	3) 1859756 
 				  </div>
 				  <div class="col-xs-5 col-sm-5 col-md-5">
 				  	<%= text_field_tag :answer, UserAnswer.get_answer(4, 6, @user_answers,2), size: 5, class: "pull-left form-control", disabled: true %>
 				  </div>
 				  <div class="col-xs-2 col-sm-2 col-md-2">
-						<%= UserAnswer.correct?(4, 6, @user_answers, 2) %>
+						<%= UserAnswer.correct?(4, 3, @user_answers, 2) %>
 					</div>
 				  <div class="col-xs-5 col-sm-5 col-md-5">
-				  	4) 5723852 
+				  	4) 7575757
 				  </div>
 				  <div class="col-xs-5 col-sm-5 col-md-5">
 				  	<%= text_field_tag :answer, UserAnswer.get_answer(4, 1, @user_answers,2), size: 5, class: "pull-left form-control", disabled: true %>
 				  </div>
 				  <div class="col-xs-2 col-sm-2 col-md-2">
-						<%= UserAnswer.correct?(4, 1, @user_answers, 2) %>
+						<%= UserAnswer.correct?(4, 4, @user_answers, 2) %>
 					</div>
 				  <div class="col-xs-5 col-sm-5 col-md-5">
-				  	5) 8456812 
+				  	5) 7755775
 				  </div>
 				  <div class="col-xs-5 col-sm-5 col-md-5">
 				  	<%= text_field_tag :answer, UserAnswer.get_answer(4, 2, @user_answers,2), size: 5, class: "pull-left form-control", disabled: true %>
 				  </div>
 				  <div class="col-xs-2 col-sm-2 col-md-2">
-						<%= UserAnswer.correct?(4, 2, @user_answers, 2) %>
+						<%= UserAnswer.correct?(4, 5, @user_answers, 2) %>
 					</div>
 				  <div class="col-xs-5 col-sm-5 col-md-5">
-				  	6) 7755775 
+				  	6) 3733773
 				  </div>
 				  <div class="col-xs-5 col-sm-5 col-md-5">
 				  	<%= text_field_tag :answer, UserAnswer.get_answer(4, 5, @user_answers,2), size: 5, class: "pull-left form-control", disabled: true %>
 				  </div>
 				  <div class="col-xs-2 col-sm-2 col-md-2">
-						<%= UserAnswer.correct?(4, 5, @user_answers, 2) %>
+						<%= UserAnswer.correct?(4, 6, @user_answers, 2) %>
 					</div>
 				  
 			  </div>
@@ -502,7 +502,7 @@
 			</div>
 			<div class="col-xs-12 col-sm-12 col-md-12">
 				<div class="row">
-			  	Which truck willturn over more easily?
+			  	Which truck will turn over more easily?
 			  </div>
 			  <div class="row">
 			  	<div class="col-xs-11 col-sm-11 col-md-3">
@@ -556,7 +556,7 @@
 			</p>
 			<p>
 				<div class="col-xs-12 col-sm-12 col-md-12">
-					3. For a school fundraiser, Jenna needs to sell 15 boes of cookies. So far, she has sold 25 boxes to her grandmother, 55 boxes to her mother, and 10 boxes to a neighbor. How many more boxes of cookies does Jenna need to sell?
+					3. For a school fundraiser, Jenna needs to sell 15 boxes of cookies. So far, she has sold 25 boxes to her grandmother, 55 boxes to her mother, and 10 boxes to a neighbor. How many more boxes of cookies does Jenna need to sell?
 				</div>
 				<div class="col-xs-11 col-sm-11 col-md-11">
 					<%= text_field_tag :answer, UserAnswer.get_answer(5, 3, @user_answers,2), size: 5, class: "form-control", disabled: true %>
@@ -567,7 +567,7 @@
 			</p>
 			<p>
 				<div class="col-xs-12 col-sm-12 col-md-12">
-					4. There are 44 students on the soccer team and twice that number on the football team. tere are 18 boys and 17 girls on the track team. If each student only participates in one sport, how many students total are there on the soccer, football, and track teams?
+					4. There are 44 students on the soccer team and twice that number on the football team. There are 18 boys and 17 girls on the track team. If each student only participates in one sport, how many students total are there on the soccer, football, and track teams?
 				</div>
 				<div class="col-xs-11 col-sm-11 col-md-11">
 					<%= text_field_tag :answer, UserAnswer.get_answer(5, 4, @user_answers,2), size: 5, class: "form-control", disabled: true %>

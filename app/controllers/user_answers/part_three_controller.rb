@@ -18,7 +18,7 @@ class UserAnswers::PartThreeController < ApplicationController
 			begin
 				params[:user_answer].each do |key, value|
 					value.each do |question_num, answer|
-						question_answer = Answer.where(part_num: @stringify_part_num[key], question_num: @stringify_num[question_num]).last
+						question_answer = Answer.where(part_num: @stringify_part_num[key], question_num: @stringify_num[question_num], test_num: @login.test_num).last
 						if question_answer.nil?
 							next
 						else
