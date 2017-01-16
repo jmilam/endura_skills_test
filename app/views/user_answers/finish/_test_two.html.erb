@@ -11,10 +11,10 @@
 					Have you ever been employed with Endura Products? (Including temporary service) <div class="validation_msg"></div>
 				</div>
 				<div class="col-xs-11 col-sm-11 col-md-11">
-					<%= text_field_tag :answer, UserAnswer.get_answer(6, 1, @user_answers), size: 5, class: "form-control", disabled: true %>
+					<%= text_field_tag :answer, UserAnswer.get_answer(6, 1, @user_answers,2), size: 5, class: "form-control", disabled: true %>
 				</div>
 				<div class="col-xs-1 col-sm-1 col-md-1">
-					<%= UserAnswer.correct?(6, 1, @user_answers) %>
+					<%= UserAnswer.correct?(6, 1, @user_answers, 2) %>
 				</div>
 			</p>
 			<br/>
@@ -23,10 +23,10 @@
 					Do you have any family memebers, relatives, or significant others that work, have worked, or are planning to work or Endura? (i.e. husband, wife, child, brother, sister, aunt, uncle, niece, nephew, cousin, girlfriend, boyfriend or fiance) <div class="validation_msg"></div>
 				</div>
 				<div class="col-xs-11 col-sm-11 col-md-11">
-					<%= text_field_tag :answer, UserAnswer.get_answer(6, 2, @user_answers), size: 5, class: "form-control", disabled: true %>
+					<%= text_field_tag :answer, UserAnswer.get_answer(6, 2, @user_answers,2), size: 5, class: "form-control", disabled: true %>
 				</div>
 				<div class="col-xs-1 col-sm-1 col-md-1">
-					<%= UserAnswer.correct?(6, 2, @user_answers) %>
+					<%= UserAnswer.correct?(6, 2, @user_answers, 2) %>
 				</div>
 			</p>
 			<br/>
@@ -36,7 +36,7 @@
 				<p>
 					In the space provided below, please write how you are planning on benefitting the company, and what characteristics you have that differentiate yourself from other candidates.
 				</p>
-				<p><%= text_area_tag :answer, UserAnswer.get_answer(6, 3, @user_answers), rows: 10, id: "part_6_question_1", size: 5, class: "form-control", disabled: true %></p>
+				<p><%= text_area_tag :answer, UserAnswer.get_answer(6, 3, @user_answers,2), rows: 10, id: "part_6_question_1", size: 5, class: "form-control", disabled: true %></p>
 			</div>
 		</div>
 	</div>
@@ -50,82 +50,82 @@
 		<div class="row">
 			<div class="row">
 			  <div class="col-xs-11 col-sm-11 col-md-2">
-			  	1) 633 - 401 = <%= text_field_tag :answer, UserAnswer.get_answer(1, 1, @user_answers), size: 5, class: "pull-right", disabled: true %>
+			  	1) 633 - 401 = <%= text_field_tag :answer, UserAnswer.get_answer(1, 1, @user_answers,2), size: 5, class: "pull-right", disabled: true %>
 			  </div>
 			  <div class="col-xs-1 col-sm-1 col-md-1">
-					<%= UserAnswer.correct?(1, 4, @user_answers) %>
+					<%= UserAnswer.correct?(1, 4, @user_answers, 2) %>
 				</div>
 			  <div class="col-xs-11 col-sm-11 col-md-2">
-			  	2) 22 + 1579 = <%= text_field_tag :answer, UserAnswer.get_answer(1, 2, @user_answers), size: 5, class: "pull-right", disabled: true %>
+			  	2) 22 + 1579 = <%= text_field_tag :answer, UserAnswer.get_answer(1, 2, @user_answers,2), size: 5, class: "pull-right", disabled: true %>
 			  </div>
 			  <div class="col-xs-1 col-sm-1 col-md-1">
-					<%= UserAnswer.correct?(1, 4, @user_answers) %>
+					<%= UserAnswer.correct?(1, 4, @user_answers, 2) %>
 				</div>
 			  <div class="col-xs-11 col-sm-11 col-md-2">
-			  	3) 204 / 17 = <%= text_field_tag :answer, UserAnswer.get_answer(1, 3, @user_answers), size: 5, class: "pull-right", disabled: true %>
+			  	3) 204 / 17 = <%= text_field_tag :answer, UserAnswer.get_answer(1, 3, @user_answers,2), size: 5, class: "pull-right", disabled: true %>
 			  </div>
 			  <div class="col-xs-1 col-sm-1 col-md-1">
-					<%= UserAnswer.correct?(1, 4, @user_answers) %>
+					<%= UserAnswer.correct?(1, 4, @user_answers, 2) %>
 				</div>
 			  <div class="col-xs-11 col-sm-11 col-md-2">
-			  	4) 120 - 73 = <%= text_field_tag :answer, UserAnswer.get_answer(1, 4, @user_answers), size: 5, class: "pull-right", disabled: true %>
+			  	4) 120 - 73 = <%= text_field_tag :answer, UserAnswer.get_answer(1, 4, @user_answers,2), size: 5, class: "pull-right", disabled: true %>
 			  </div>
 			  <div class="col-xs-1 col-sm-1 col-md-1">
-					<%= UserAnswer.correct?(1, 4, @user_answers) %>
-				</div>
-			</div>
-
-			<div class="row" style="padding-top: 20px;">
-			  <div class="col-xs-11 col-sm-11 col-md-2">
-			  	5) 138 + 25 = <%= text_field_tag :answer, UserAnswer.get_answer(1, 5, @user_answers), size: 5, class: "pull-right", disabled: true %>
-			  </div>
-			  <div class="col-xs-1 col-sm-1 col-md-1">
-					<%= UserAnswer.correct?(1, 5, @user_answers) %>
-				</div>
-			  <div class="col-xs-11 col-sm-11 col-md-2">
-			  	6) 265 / 5 = <%= text_field_tag :answer, UserAnswer.get_answer(1, 6, @user_answers), size: 5, class: "pull-right", disabled: true %>
-			  </div>
-			  <div class="col-xs-1 col-sm-1 col-md-1">
-					<%= UserAnswer.correct?(1, 6, @user_answers) %>
-				</div>
-			  <div class="col-xs-11 col-sm-11 col-md-2">
-			  	7) 28 x 3 = <%= text_field_tag :answer, UserAnswer.get_answer(1, 7, @user_answers), size: 5, class: "pull-right", disabled: true %>
-			  </div>
-			  <div class="col-xs-1 col-sm-1 col-md-1">
-					<%= UserAnswer.correct?(1, 7, @user_answers) %>
-				</div>
-			  <div class="col-xs-11 col-sm-11 col-md-2">
-			  	8) 336 x 5 = <%= text_field_tag :answer, UserAnswer.get_answer(1, 8, @user_answers), size: 5, class: "pull-right", disabled: true %>
-			  </div>
-			  <div class="col-xs-1 col-sm-1 col-md-1">
-					<%= UserAnswer.correct?(1, 8, @user_answers) %>
+					<%= UserAnswer.correct?(1, 4, @user_answers, 2) %>
 				</div>
 			</div>
 
 			<div class="row" style="padding-top: 20px;">
 			  <div class="col-xs-11 col-sm-11 col-md-2">
-			  	9) 70 x 4 = <%= text_field_tag :answer, UserAnswer.get_answer(1, 9, @user_answers), size: 5, class: "pull-right", disabled: true %>
+			  	5) 138 + 25 = <%= text_field_tag :answer, UserAnswer.get_answer(1, 5, @user_answers,2), size: 5, class: "pull-right", disabled: true %>
 			  </div>
 			  <div class="col-xs-1 col-sm-1 col-md-1">
-					<%= UserAnswer.correct?(1, 9, @user_answers) %>
+					<%= UserAnswer.correct?(1, 5, @user_answers, 2) %>
 				</div>
 			  <div class="col-xs-11 col-sm-11 col-md-2">
-			  	10) 6965 - 3261 = <%= text_field_tag :answer, UserAnswer.get_answer(1, 10, @user_answers), size: 5, class: "pull-right", disabled: true %>
+			  	6) 265 / 5 = <%= text_field_tag :answer, UserAnswer.get_answer(1, 6, @user_answers,2), size: 5, class: "pull-right", disabled: true %>
 			  </div>
 			  <div class="col-xs-1 col-sm-1 col-md-1">
-					<%= UserAnswer.correct?(1, 10, @user_answers) %>
+					<%= UserAnswer.correct?(1, 6, @user_answers, 2) %>
 				</div>
 			  <div class="col-xs-11 col-sm-11 col-md-2">
-			  	11) 154 / 14 = <%= text_field_tag :answer, UserAnswer.get_answer(1, 11, @user_answers), size: 5, class: "pull-right", disabled: true %>
+			  	7) 28 x 3 = <%= text_field_tag :answer, UserAnswer.get_answer(1, 7, @user_answers,2), size: 5, class: "pull-right", disabled: true %>
 			  </div>
 			  <div class="col-xs-1 col-sm-1 col-md-1">
-					<%= UserAnswer.correct?(1, 11, @user_answers) %>
+					<%= UserAnswer.correct?(1, 7, @user_answers, 2) %>
 				</div>
 			  <div class="col-xs-11 col-sm-11 col-md-2">
-			  	12) 177 - 89 = <%= text_field_tag :answer, UserAnswer.get_answer(1, 12, @user_answers), size: 5, class: "pull-right", disabled: true %>
+			  	8) 336 x 5 = <%= text_field_tag :answer, UserAnswer.get_answer(1, 8, @user_answers,2), size: 5, class: "pull-right", disabled: true %>
 			  </div>
 			  <div class="col-xs-1 col-sm-1 col-md-1">
-					<%= UserAnswer.correct?(1, 12, @user_answers) %>
+					<%= UserAnswer.correct?(1, 8, @user_answers, 2) %>
+				</div>
+			</div>
+
+			<div class="row" style="padding-top: 20px;">
+			  <div class="col-xs-11 col-sm-11 col-md-2">
+			  	9) 70 x 4 = <%= text_field_tag :answer, UserAnswer.get_answer(1, 9, @user_answers,2), size: 5, class: "pull-right", disabled: true %>
+			  </div>
+			  <div class="col-xs-1 col-sm-1 col-md-1">
+					<%= UserAnswer.correct?(1, 9, @user_answers, 2) %>
+				</div>
+			  <div class="col-xs-11 col-sm-11 col-md-2">
+			  	10) 6965 - 3261 = <%= text_field_tag :answer, UserAnswer.get_answer(1, 10, @user_answers,2), size: 5, class: "pull-right", disabled: true %>
+			  </div>
+			  <div class="col-xs-1 col-sm-1 col-md-1">
+					<%= UserAnswer.correct?(1, 10, @user_answers, 2) %>
+				</div>
+			  <div class="col-xs-11 col-sm-11 col-md-2">
+			  	11) 154 / 14 = <%= text_field_tag :answer, UserAnswer.get_answer(1, 11, @user_answers,2), size: 5, class: "pull-right", disabled: true %>
+			  </div>
+			  <div class="col-xs-1 col-sm-1 col-md-1">
+					<%= UserAnswer.correct?(1, 11, @user_answers, 2) %>
+				</div>
+			  <div class="col-xs-11 col-sm-11 col-md-2">
+			  	12) 177 - 89 = <%= text_field_tag :answer, UserAnswer.get_answer(1, 12, @user_answers,2), size: 5, class: "pull-right", disabled: true %>
+			  </div>
+			  <div class="col-xs-1 col-sm-1 col-md-1">
+					<%= UserAnswer.correct?(1, 12, @user_answers, 2) %>
 				</div>
 			</div>
 		</div>
@@ -148,18 +148,18 @@
 		  			<%= image_tag "box_triangle.png", width: "220", height: "200" %>
 		  		</div>
 		  		<div class="col-xs-1 col-sm-1 col-md-1">
-						<%= UserAnswer.correct?(2, 1, @user_answers) %>
+						<%= UserAnswer.correct?(2, 1, @user_answers, 2) %>
 					</div>
 		  	</div>
 		  	<div class="row">
 		  		<div class="col-xs-2 col-sm-2 col-md-2">
-				  	<%= radio_button 'part_two_quest_one', 'part_two_quest_one', "36", disabled: true, :checked => (UserAnswer.get_answer(2, 1, @user_answers) == "36") %> 36
+				  	<%= radio_button 'part_two_quest_one', 'part_two_quest_one', "36", disabled: true, :checked => (UserAnswer.get_answer(2, 1, @user_answers,2) == "36") %> 36
 				  </div>
 				  <div class="col-xs-2 col-sm-2 col-md-2">
-				  	<%= radio_button 'part_two_quest_one', 'part_two_quest_one', "30", disabled: true, :checked => (UserAnswer.get_answer(2, 1, @user_answers) == "30") %> 30
+				  	<%= radio_button 'part_two_quest_one', 'part_two_quest_one', "30", disabled: true, :checked => (UserAnswer.get_answer(2, 1, @user_answers,2) == "30") %> 30
 				  </div>
 				  <div class="col-xs-2 col-sm-2 col-md-2">
-				  	<%= radio_button 'part_two_quest_one', 'part_two_quest_one', "28", disabled: true, :checked => (UserAnswer.get_answer(2, 1, @user_answers) == "28") %> 28
+				  	<%= radio_button 'part_two_quest_one', 'part_two_quest_one', "28", disabled: true, :checked => (UserAnswer.get_answer(2, 1, @user_answers,2) == "28") %> 28
 				  </div>
 		  	</div>
 		  </div>
@@ -172,18 +172,18 @@
 		  			<%= image_tag "cube.png", width: "200", height: "200" %>
 		  		</div>
 		  		<div class="col-xs-1 col-sm-1 col-md-1">
-						<%= UserAnswer.correct?(2, 2, @user_answers) %>
+						<%= UserAnswer.correct?(2, 2, @user_answers, 2) %>
 					</div>
 		  	</div>
 		  	<div class="row">
 				  <div class="col-xs-2 col-sm-2 col-md-2">
-		  			<%= radio_button 'part_two_quest_two', 'part_two_quest_two', "30", disabled: true, :checked => (UserAnswer.get_answer(2, 2, @user_answers) == "30") %> 30
+		  			<%= radio_button 'part_two_quest_two', 'part_two_quest_two', "30", disabled: true, :checked => (UserAnswer.get_answer(2, 2, @user_answers,2) == "30") %> 30
 				  </div>
 				  <div class="col-xs-2 col-sm-2 col-md-2">
-				  	<%= radio_button 'part_two_quest_two', 'part_two_quest_two', "18", disabled: true, :checked => (UserAnswer.get_answer(2, 2, @user_answers) == "18") %> 18
+				  	<%= radio_button 'part_two_quest_two', 'part_two_quest_two', "18", disabled: true, :checked => (UserAnswer.get_answer(2, 2, @user_answers,2) == "18") %> 18
 				  </div>
 				  <div class="col-xs-2 col-sm-2 col-md-2">
-				  	<%= radio_button 'part_two_quest_two', 'part_two_quest_two', "27", disabled: true, :checked => (UserAnswer.get_answer(2, 2, @user_answers) == "27") %> 27
+				  	<%= radio_button 'part_two_quest_two', 'part_two_quest_two', "27", disabled: true, :checked => (UserAnswer.get_answer(2, 2, @user_answers,2) == "27") %> 27
 				  </div>
 		  	</div>
 		  </div>
@@ -205,7 +205,7 @@
 
 		  <div class="row">
 			  <div class="col-xs-12 col-sm-12 col-md-12">
-			    Circle the correct answer for each letter listed above.
+			    Select the correct answer for each letter listed above.
 			  </div>
 			</div>
 
@@ -216,19 +216,19 @@
 		    	</div>
 		    	<div class="row">
 		    		<div class="col-xs-12 col-sm-6 col-md-3">
-		    			<%= radio_button 'part_three_quest_c', 'part_three_quest_c', "3", disabled: true, :checked => (UserAnswer.get_answer(3, 3, @user_answers) == "3") %> 3
+		    			<%= radio_button 'part_three_quest_c', 'part_three_quest_c', "3", disabled: true, :checked => (UserAnswer.get_answer(3, 1, @user_answers,2) == "3") %> 3
 		    		</div>
 		    		<div class="col-xs-12 col-sm-6 col-md-3">
-				    	<%= radio_button 'part_three_quest_c', 'part_three_quest_c', "3 1/2", disabled: true, :checked => (UserAnswer.get_answer(3, 3, @user_answers) == "3 1/2") %> 3 1/2
+				    	<%= radio_button 'part_three_quest_c', 'part_three_quest_c', "3 1/2", disabled: true, :checked => (UserAnswer.get_answer(3, 1, @user_answers,2) == "3 1/2") %> 3 1/2
 				    </div>
 				    <div class="col-xs-12 col-sm-6 col-md-3">
-				    	<%= radio_button 'part_three_quest_c', 'part_three_quest_c', "1 1/2", disabled: true, :checked => (UserAnswer.get_answer(3, 3, @user_answers) == "1 1/2") %> 1 1/2
+				    	<%= radio_button 'part_three_quest_c', 'part_three_quest_c', "1 1/2", disabled: true, :checked => (UserAnswer.get_answer(3, 1, @user_answers,2) == "1 1/2") %> 1 1/2
 				    </div>
 				    <div class="col-xs-11 col-sm-5 col-md-2">
-				    	<%= radio_button 'part_three_quest_c', 'part_three_quest_c', disabled: true, :checked => (UserAnswer.get_answer(3, 3, @user_answers) == "3 1/4") %> 3 1/4
+				    	<%= radio_button 'part_three_quest_c', 'part_three_quest_c', disabled: true, :checked => (UserAnswer.get_answer(3, 1, @user_answers,2) == "3 1/4") %> 3 1/4
 				    </div>
 				    <div class="col-xs-1 col-sm-1 col-md-1">
-							<%= UserAnswer.correct?(3, 3, @user_answers) %>
+							<%= UserAnswer.correct?(3, 1, @user_answers, 2) %>
 						</div>
 		    	</div>
 		    </div>
@@ -241,19 +241,19 @@
 		    	</div>
 		    	<div class="row">
 		    		<div class="col-xs-12 col-sm-6 col-md-3">
-		    			<%= radio_button 'part_three_quest_a', 'part_three_quest_a', "1 1/4", disabled: true, :checked => (UserAnswer.get_answer(3, 1, @user_answers) == "1 1/4") %> 1 1/4 
+		    			<%= radio_button 'part_three_quest_a', 'part_three_quest_a', "1 1/4", disabled: true, :checked => (UserAnswer.get_answer(3, 2, @user_answers,2) == "1 1/4") %> 1 1/4 
 		    		</div>
 		    		<div class="col-xs-12 col-sm-6 col-md-3">
-				    	<%= radio_button 'part_three_quest_a', 'part_three_quest_a', "1 1/2", disabled: true, :checked => (UserAnswer.get_answer(3, 1, @user_answers) == "1 1/2") %> 1 1/2
+				    	<%= radio_button 'part_three_quest_a', 'part_three_quest_a', "1 1/2", disabled: true, :checked => (UserAnswer.get_answer(3, 2, @user_answers,2) == "1 1/2") %> 1 1/2
 				    </div>
 				    <div class="col-xs-12 col-sm-6 col-md-3">
-				    	<%= radio_button 'part_three_quest_a', 'part_three_quest_a', "1 3/8", disabled: true, :checked => (UserAnswer.get_answer(3, 1, @user_answers) == "1 3/8") %> 1 3/8
+				    	<%= radio_button 'part_three_quest_a', 'part_three_quest_a', "1 3/8", disabled: true, :checked => (UserAnswer.get_answer(3, 2, @user_answers,2) == "1 3/8") %> 1 3/8
 				    </div>
 				    <div class="col-xs-11 col-sm-5 col-md-2">
-				    	<%= radio_button 'part_three_quest_a', 'part_three_quest_a', "2", disabled: true, :checked => (UserAnswer.get_answer(3, 1, @user_answers) == "2") %> 2
+				    	<%= radio_button 'part_three_quest_a', 'part_three_quest_a', "2", disabled: true, :checked => (UserAnswer.get_answer(3, 2, @user_answers,2) == "2") %> 2
 				    </div>
 				    <div class="col-xs-1 col-sm-1 col-md-1">
-							<%= UserAnswer.correct?(3, 1, @user_answers) %>
+							<%= UserAnswer.correct?(3, 2, @user_answers, 2) %>
 						</div>
 		    	</div>
 		    </div>
@@ -266,19 +266,19 @@
 		    	</div>
 		    	<div class="row">
 		    		<div class="col-xs-12 col-sm-6 col-md-3">
-		    			<%= radio_button 'part_three_quest_e', 'part_three_quest_e', "2 1/4", disabled: true, :checked => (UserAnswer.get_answer(3, 5, @user_answers) == "2") %> 2 1/4 
+		    			<%= radio_button 'part_three_quest_e', 'part_three_quest_e', "2 1/4", disabled: true, :checked => (UserAnswer.get_answer(3, 3, @user_answers,2) == "2 1/4") %> 2 1/4 
 		    		</div>
 		    		<div class="col-xs-12 col-sm-6 col-md-3">
-				    	<%= radio_button 'part_three_quest_e', 'part_three_quest_e', "2", disabled: true, :checked => (UserAnswer.get_answer(3, 4, @user_answers) == "2") %> 2
+				    	<%= radio_button 'part_three_quest_e', 'part_three_quest_e', "2", disabled: true, :checked => (UserAnswer.get_answer(3, 3, @user_answers,2) == "2") %> 2
 				    </div>
 				    <div class="col-xs-12 col-sm-6 col-md-3">
-				    	<%= radio_button 'part_three_quest_e', 'part_three_quest_e', "3", disabled: true, :checked => (UserAnswer.get_answer(3, 4, @user_answers) == "2") %> 3
+				    	<%= radio_button 'part_three_quest_e', 'part_three_quest_e', "3", disabled: true, :checked => (UserAnswer.get_answer(3, 3, @user_answers,2) == "3") %> 3
 				    </div>
 				    <div class="col-xs-11 col-sm-5 col-md-2">
-				    	<%= radio_button 'part_three_quest_e', 'part_three_quest_e', "3 1/4", disabled: true, :checked => (UserAnswer.get_answer(3, 4, @user_answers) == "2") %> 3 1/4
+				    	<%= radio_button 'part_three_quest_e', 'part_three_quest_e', "3 1/4", disabled: true, :checked => (UserAnswer.get_answer(3, 3, @user_answers,2) == "3 1/4") %> 3 1/4
 				    </div>
 				    <div class="col-xs-1 col-sm-1 col-md-1">
-							<%= UserAnswer.correct?(3, 4, @user_answers) %>
+							<%= UserAnswer.correct?(3, 3, @user_answers, 2) %>
 						</div>
 		    	</div>
 		    </div>
@@ -291,19 +291,19 @@
 		    	</div>
 		    	<div class="row">
 		    		<div class="col-xs-12 col-sm-6 col-md-3">
-		    			<%= radio_button 'part_three_quest_d', 'part_three_quest_d', "1 1/4", disabled: true, :checked => (UserAnswer.get_answer(3, 4, @user_answers) == "1 1/4") %> 1 1/4 
+		    			<%= radio_button 'part_three_quest_d', 'part_three_quest_d', "1 1/4", disabled: true, :checked => (UserAnswer.get_answer(3, 4, @user_answers,2) == "1 1/4") %> 1 1/4 
 		    		</div>
 		    		<div class="col-xs-12 col-sm-6 col-md-3">
-				    	<%= radio_button 'part_three_quest_d', 'part_three_quest_d', "3/4", disabled: true, :checked => (UserAnswer.get_answer(3, 4, @user_answers) == "3/4") %> 3/4
+				    	<%= radio_button 'part_three_quest_d', 'part_three_quest_d', "3/4", disabled: true, :checked => (UserAnswer.get_answer(3, 4, @user_answers,2) == "3/4") %> 3/4
 				    </div>
 				    <div class="col-xs-12 col-sm-6 col-md-3">
-				    	<%= radio_button 'part_three_quest_d', 'part_three_quest_d', "1 3/8", disabled: true, :checked => (UserAnswer.get_answer(3, 4, @user_answers) == "1 3/8") %> 1 3/8
+				    	<%= radio_button 'part_three_quest_d', 'part_three_quest_d', "1 3/8", disabled: true, :checked => (UserAnswer.get_answer(3, 4, @user_answers,2) == "1 3/8") %> 1 3/8
 				    </div>
 				    <div class="col-xs-11 col-sm-5 col-md-2">
-				    	<%= radio_button 'part_three_quest_d', 'part_three_quest_d', "1", disabled: true, :checked => (UserAnswer.get_answer(3, 4, @user_answers) == "1") %> 1
+				    	<%= radio_button 'part_three_quest_d', 'part_three_quest_d', "1", disabled: true, :checked => (UserAnswer.get_answer(3, 4, @user_answers,2) == "1") %> 1
 				    </div>
 				    <div class="col-xs-1 col-sm-1 col-md-1">
-							<%= UserAnswer.correct?(3, 4, @user_answers) %>
+							<%= UserAnswer.correct?(3, 4, @user_answers, 2) %>
 						</div>
 		    	</div>
 		    </div>
@@ -316,19 +316,19 @@
 		    	</div>
 		    	<div class="row">
 		    		<div class="col-xs-12 col-sm-6 col-md-3">
-		    			<%= radio_button 'part_three_quest_b', 'part_three_quest_b', "2 3/4", disabled: true, :checked => (UserAnswer.get_answer(3, 2, @user_answers) == "2 3/4") %> 2 3/4 
+		    			<%= radio_button 'part_three_quest_b', 'part_three_quest_b', "2 3/4", disabled: true, :checked => (UserAnswer.get_answer(3, 5, @user_answers,2) == "2 3/4") %> 2 3/4 
 		    		</div>
 		    		<div class="col-xs-12 col-sm-6 col-md-3">
-				    	<%= radio_button 'part_three_quest_b', 'part_three_quest_b', "2 1/2", disabled: true, :checked => (UserAnswer.get_answer(3, 2, @user_answers) == "2 1/2") %> 2 1/2
+				    	<%= radio_button 'part_three_quest_b', 'part_three_quest_b', "2 1/2", disabled: true, :checked => (UserAnswer.get_answer(3, 5, @user_answers,2) == "2 1/2") %> 2 1/2
 				    </div>
 				    <div class="col-xs-12 col-sm-6 col-md-3">
-				    	<%= radio_button 'part_three_quest_b', 'part_three_quest_b', "3", disabled: true, :checked => (UserAnswer.get_answer(3, 2, @user_answers) == "3") %> 3
+				    	<%= radio_button 'part_three_quest_b', 'part_three_quest_b', "3", disabled: true, :checked => (UserAnswer.get_answer(3, 5, @user_answers,2) == "3") %> 3
 				    </div>
 				    <div class="col-xs-11 col-sm-5 col-md-2">
-				    	<%= radio_button 'part_three_quest_b', 'part_three_quest_b', "3 1/8", disabled: true, :checked => (UserAnswer.get_answer(3, 2, @user_answers) == "3 1/8") %> 3 1/8
+				    	<%= radio_button 'part_three_quest_b', 'part_three_quest_b', "3 1/8", disabled: true, :checked => (UserAnswer.get_answer(3, 5, @user_answers,2) == "3 1/8") %> 3 1/8
 				    </div>
 				    <div class="col-xs-1 col-sm-1 col-md-1">
-							<%= UserAnswer.correct?(3, 2, @user_answers) %>
+							<%= UserAnswer.correct?(3, 5, @user_answers, 2) %>
 						</div>
 		    	</div>
 		    </div>
@@ -341,19 +341,19 @@
 		    	</div>
 		    	<div class="row">
 		    		<div class="col-xs-12 col-sm-6 col-md-3">
-		    			<%= radio_button 'part_three_quest_f', 'part_three_quest_f', "2 3/4", disabled: true, :checked => (UserAnswer.get_answer(3, 6, @user_answers) == "2 3/4") %> 2 3/4
+		    			<%= radio_button 'part_three_quest_f', 'part_three_quest_f', "2 3/4", disabled: true, :checked => (UserAnswer.get_answer(3, 6, @user_answers,2) == "2 3/4") %> 2 3/4
 		    		</div>
 		    		<div class="col-xs-12 col-sm-6 col-md-3">
-				    	<%= radio_button 'part_three_quest_f', 'part_three_quest_f', "3 3/32", disabled: true, :checked => (UserAnswer.get_answer(3, 6, @user_answers) == "3 3/32") %> 3 3/32
+				    	<%= radio_button 'part_three_quest_f', 'part_three_quest_f', "3 3/32", disabled: true, :checked => (UserAnswer.get_answer(3, 6, @user_answers,2) == "3 3/32") %> 3 3/32
 				    </div>
 				    <div class="col-xs-12 col-sm-6 col-md-3">
-				    	<%= radio_button 'part_three_quest_f', 'part_three_quest_f', "3", disabled: true, :checked => (UserAnswer.get_answer(3, 6, @user_answers) == "3") %> 3
+				    	<%= radio_button 'part_three_quest_f', 'part_three_quest_f', "3", disabled: true, :checked => (UserAnswer.get_answer(3, 6, @user_answers,2) == "3") %> 3
 				    </div>
 				    <div class="col-xs-11 col-sm-5 col-md-2">
-				    	<%= radio_button 'part_three_quest_f', 'part_three_quest_f', "3 1/8", disabled: true, :checked => (UserAnswer.get_answer(3, 6, @user_answers) == "3 1/8") %> 3 1/8
+				    	<%= radio_button 'part_three_quest_f', 'part_three_quest_f', "3 1/8", disabled: true, :checked => (UserAnswer.get_answer(3, 6, @user_answers,2) == "3 1/8") %> 3 1/8
 				    </div>
 				    <div class="col-xs-1 col-sm-1 col-md-1">
-							<%= UserAnswer.correct?(3, 6, @user_answers) %>
+							<%= UserAnswer.correct?(3, 6, @user_answers, 2) %>
 						</div>
 		    	</div>
 		    </div>
@@ -377,55 +377,55 @@
 				  	1) 7575757 
 				  </div>
 				  <div class="col-xs-5 col-sm-5 col-md-5">
-				  	<%= text_field_tag :answer, UserAnswer.get_answer(4, 4, @user_answers), size: 5, class: "pull-left form-control", disabled: true %>
+				  	<%= text_field_tag :answer, UserAnswer.get_answer(4, 4, @user_answers,2), size: 5, class: "pull-left form-control", disabled: true %>
 				  </div>
 				  <div class="col-xs-2 col-sm-2 col-md-2">
-						<%= UserAnswer.correct?(4, 4, @user_answers) %>
+						<%= UserAnswer.correct?(4, 4, @user_answers, 2) %>
 					</div>
 				  <div class="col-xs-5 col-sm-5 col-md-5">
 				  	2) 1859756 
 				  </div>
 				  <div class="col-xs-5 col-sm-5 col-md-5">
-				  	<%= text_field_tag :answer, UserAnswer.get_answer(4, 3, @user_answers), size: 5, class: "pull-left form-control", disabled: true %>
+				  	<%= text_field_tag :answer, UserAnswer.get_answer(4, 3, @user_answers,2), size: 5, class: "pull-left form-control", disabled: true %>
 				  </div>
 				  <div class="col-xs-2 col-sm-2 col-md-2">
-						<%= UserAnswer.correct?(4, 3, @user_answers) %>
+						<%= UserAnswer.correct?(4, 3, @user_answers, 2) %>
 					</div>
 					<div class="col-xs-5 col-sm-5 col-md-5">
 				  	3) 3733773 
 				  </div>
 				  <div class="col-xs-5 col-sm-5 col-md-5">
-				  	<%= text_field_tag :answer, UserAnswer.get_answer(4, 6, @user_answers), size: 5, class: "pull-left form-control", disabled: true %>
+				  	<%= text_field_tag :answer, UserAnswer.get_answer(4, 6, @user_answers,2), size: 5, class: "pull-left form-control", disabled: true %>
 				  </div>
 				  <div class="col-xs-2 col-sm-2 col-md-2">
-						<%= UserAnswer.correct?(4, 6, @user_answers) %>
+						<%= UserAnswer.correct?(4, 6, @user_answers, 2) %>
 					</div>
 				  <div class="col-xs-5 col-sm-5 col-md-5">
 				  	4) 5723852 
 				  </div>
 				  <div class="col-xs-5 col-sm-5 col-md-5">
-				  	<%= text_field_tag :answer, UserAnswer.get_answer(4, 1, @user_answers), size: 5, class: "pull-left form-control", disabled: true %>
+				  	<%= text_field_tag :answer, UserAnswer.get_answer(4, 1, @user_answers,2), size: 5, class: "pull-left form-control", disabled: true %>
 				  </div>
 				  <div class="col-xs-2 col-sm-2 col-md-2">
-						<%= UserAnswer.correct?(4, 1, @user_answers) %>
+						<%= UserAnswer.correct?(4, 1, @user_answers, 2) %>
 					</div>
 				  <div class="col-xs-5 col-sm-5 col-md-5">
 				  	5) 8456812 
 				  </div>
 				  <div class="col-xs-5 col-sm-5 col-md-5">
-				  	<%= text_field_tag :answer, UserAnswer.get_answer(4, 2, @user_answers), size: 5, class: "pull-left form-control", disabled: true %>
+				  	<%= text_field_tag :answer, UserAnswer.get_answer(4, 2, @user_answers,2), size: 5, class: "pull-left form-control", disabled: true %>
 				  </div>
 				  <div class="col-xs-2 col-sm-2 col-md-2">
-						<%= UserAnswer.correct?(4, 2, @user_answers) %>
+						<%= UserAnswer.correct?(4, 2, @user_answers, 2) %>
 					</div>
 				  <div class="col-xs-5 col-sm-5 col-md-5">
 				  	6) 7755775 
 				  </div>
 				  <div class="col-xs-5 col-sm-5 col-md-5">
-				  	<%= text_field_tag :answer, UserAnswer.get_answer(4, 5, @user_answers), size: 5, class: "pull-left form-control", disabled: true %>
+				  	<%= text_field_tag :answer, UserAnswer.get_answer(4, 5, @user_answers,2), size: 5, class: "pull-left form-control", disabled: true %>
 				  </div>
 				  <div class="col-xs-2 col-sm-2 col-md-2">
-						<%= UserAnswer.correct?(4, 5, @user_answers) %>
+						<%= UserAnswer.correct?(4, 5, @user_answers, 2) %>
 					</div>
 				  
 			  </div>
@@ -439,64 +439,64 @@
 				  	7) 1/5
 				  </div>
 				  <div class="col-xs-5 col-sm-5 col-md-5">
-				  	<%= text_field_tag :answer, UserAnswer.get_answer(4, 7, @user_answers), size: 5, class: "pull-left form-control", disabled: true %>
+				  	<%= text_field_tag :answer, UserAnswer.get_answer(4, 7, @user_answers,2), size: 5, class: "pull-left form-control", disabled: true %>
 				  </div>
 				  <div class="col-xs-2 col-sm-2 col-md-2">
-						<%= UserAnswer.correct?(4, 7, @user_answers) %>
+						<%= UserAnswer.correct?(4, 7, @user_answers,2) %>
 					</div>
 				  <div class="col-xs-5 col-sm-5 col-md-5">
 				  	8) 3/4 
 				  </div>
 				  <div class="col-xs-5 col-sm-5 col-md-5">
-				  	<%= text_field_tag :answer, UserAnswer.get_answer(4, 8, @user_answers), size: 5, class: "pull-left form-control", disabled: true %>
+				  	<%= text_field_tag :answer, UserAnswer.get_answer(4, 8, @user_answers,2), size: 5, class: "pull-left form-control", disabled: true %>
 				  </div>
 				  <div class="col-xs-2 col-sm-2 col-md-2">
-						<%= UserAnswer.correct?(4, 8, @user_answers) %>
+						<%= UserAnswer.correct?(4, 8, @user_answers, 2) %>
 					</div>
 				  <div class="col-xs-5 col-sm-5 col-md-5">
 				  	9) 5/8 
 				  </div>
 				  <div class="col-xs-5 col-sm-5 col-md-5">
-				  	<%= text_field_tag :answer, UserAnswer.get_answer(4, 9, @user_answers), size: 5, class: "pull-left form-control", disabled: true %>
+				  	<%= text_field_tag :answer, UserAnswer.get_answer(4, 9, @user_answers,2), size: 5, class: "pull-left form-control", disabled: true %>
 				  </div>
 				  <div class="col-xs-2 col-sm-2 col-md-2">
-						<%= UserAnswer.correct?(4, 9, @user_answers) %>
+						<%= UserAnswer.correct?(4, 9, @user_answers, 2) %>
 					</div>
 				  <div class="col-xs-5 col-sm-5 col-md-5">
 				  	10) 1/2 
 				  </div>
 				  <div class="col-xs-5 col-sm-5 col-md-5">
-				  	<%= text_field_tag :answer, UserAnswer.get_answer(4, 10, @user_answers), size: 5, class: "pull-left form-control", disabled: true %>
+				  	<%= text_field_tag :answer, UserAnswer.get_answer(4, 10, @user_answers,2), size: 5, class: "pull-left form-control", disabled: true %>
 				  </div>
 				  <div class="col-xs-2 col-sm-2 col-md-2">
-						<%= UserAnswer.correct?(4, 10, @user_answers) %>
+						<%= UserAnswer.correct?(4, 10, @user_answers, 2) %>
 					</div>
 				  <div class="col-xs-5 col-sm-5 col-md-5">
 				  	11) 1/16 
 				  </div>
 				  <div class="col-xs-5 col-sm-5 col-md-5">
-				  	<%= text_field_tag :answer, UserAnswer.get_answer(4, 11, @user_answers), size: 5, class: "pull-left form-control", disabled: true %>
+				  	<%= text_field_tag :answer, UserAnswer.get_answer(4, 11, @user_answers,2), size: 5, class: "pull-left form-control", disabled: true %>
 				  </div>
 				  <div class="col-xs-2 col-sm-2 col-md-2">
-						<%= UserAnswer.correct?(4, 11, @user_answers) %>
+						<%= UserAnswer.correct?(4, 11, @user_answers, 2) %>
 					</div>
 				  <div class="col-xs-5 col-sm-5 col-md-5">
 				  	12) 1/4 
 				  </div>
 				  <div class="col-xs-5 col-sm-5 col-md-5">
-				  	<%= text_field_tag :answer, UserAnswer.get_answer(4, 12, @user_answers), size: 5, class: "pull-left form-control", disabled: true %>
+				  	<%= text_field_tag :answer, UserAnswer.get_answer(4, 12, @user_answers,2), size: 5, class: "pull-left form-control", disabled: true %>
 				  </div>
 				  <div class="col-xs-2 col-sm-2 col-md-2">
-						<%= UserAnswer.correct?(4, 12, @user_answers) %>
+						<%= UserAnswer.correct?(4, 12, @user_answers, 2) %>
 					</div>
 				  <div class="col-xs-5 col-sm-5 col-md-5">
 				  	13) 1/8 
 				  </div>
 				  <div class="col-xs-5 col-sm-5 col-md-5">
-				  	<%= text_field_tag :answer, UserAnswer.get_answer(4, 13, @user_answers), size: 5, class: "pull-left form-control", disabled: true %>
+				  	<%= text_field_tag :answer, UserAnswer.get_answer(4, 13, @user_answers,2), size: 5, class: "pull-left form-control", disabled: true %>
 				  </div>
 				  <div class="col-xs-2 col-sm-2 col-md-2">
-						<%= UserAnswer.correct?(4, 13, @user_answers) %>
+						<%= UserAnswer.correct?(4, 13, @user_answers, 2) %>
 					</div>
 			  </div>  
 			</div>
@@ -509,16 +509,16 @@
 				  	<%= image_tag "truck.png" %>
 				  </div>
 				  <div class="col-xs-11 col-sm-11 col-md-3">
-				  	<%= radio_button 'part_four_quest_3', 'part_four_quest_3', "A", disabled: true, :checked => (UserAnswer.get_answer(4, 14, @user_answers) == "A") %> A
+				  	<%= radio_button 'part_four_quest_3', 'part_four_quest_3', "A", disabled: true, :checked => (UserAnswer.get_answer(4, 14, @user_answers,2) == "A") %> A
 				  </div>
 				  <div class="col-xs-11 col-sm-11 col-md-3">
-				  	<%= radio_button 'part_four_quest_3', 'part_four_quest_3', "B", disabled: true, :checked => (UserAnswer.get_answer(4, 14, @user_answers) == "B") %> B
+				  	<%= radio_button 'part_four_quest_3', 'part_four_quest_3', "B", disabled: true, :checked => (UserAnswer.get_answer(4, 14, @user_answers,2) == "B") %> B
 				  </div>
 				  <div class="col-xs-11 col-sm-11 col-md-2">
-				  	<%= radio_button 'part_four_quest_3', 'part_four_quest_3', "C", disabled: true, :checked => (UserAnswer.get_answer(4, 14, @user_answers) == "C") %> C (if no difference)
+				  	<%= radio_button 'part_four_quest_3', 'part_four_quest_3', "C", disabled: true, :checked => (UserAnswer.get_answer(4, 14, @user_answers,2) == "C") %> C (if no difference)
 				  </div>
 				  <div class="col-xs-1 col-sm-1 col-md-1">
-						<%= UserAnswer.correct?(4, 14, @user_answers) %>
+						<%= UserAnswer.correct?(4, 14, @user_answers, 2) %>
 					</div>
 			  </div>
 			</div>
@@ -537,10 +537,10 @@
 					1. Kayla wants to buy a phone that costs $211, a phone case that costs $35, and a screen protector that costs $22. She has saved $185 from her allowance, and her uncle gave her $50.How much more money does Kayla need to buy the phone, phone case, and screen protector?
 				</div>
 				<div class="col-xs-11 col-sm-11 col-md-11">
-					<%= text_field_tag :answer, UserAnswer.get_answer(5, 1, @user_answers), size: 5, class: "form-control", disabled: true %>
+					<%= text_field_tag :answer, UserAnswer.get_answer(5, 1, @user_answers,2), size: 5, class: "form-control", disabled: true %>
 				</div>
 				<div class="col-xs-1 col-sm-1 col-md-1">
-					<%= UserAnswer.correct?(5, 1, @user_answers) %>
+					<%= UserAnswer.correct?(5, 1, @user_answers, 2) %>
 				</div>
 			</p>
 			<p>
@@ -548,10 +548,10 @@
 					2. For breakfast, Pamela bought a waffle for $2.50, syrup for $0.75 and an apple juice for $2.25. At lunch, Pamela spent $7.05 on a pizza and $1.55 on a soda. How much more money did Pamela spend on lunch than on breakfast?
 				</div>
 				<div class="col-xs-11 col-sm-11 col-md-11">
-					<%= text_field_tag :answer, UserAnswer.get_answer(5, 2, @user_answers), size: 5, class: "form-control", disabled: true %>
+					<%= text_field_tag :answer, UserAnswer.get_answer(5, 2, @user_answers,2), size: 5, class: "form-control", disabled: true %>
 				</div>
 				<div class="col-xs-1 col-sm-1 col-md-1">
-					<%= UserAnswer.correct?(5, 2, @user_answers) %>
+					<%= UserAnswer.correct?(5, 2, @user_answers, 2) %>
 				</div>
 			</p>
 			<p>
@@ -559,10 +559,10 @@
 					3. For a school fundraiser, Jenna needs to sell 15 boes of cookies. So far, she has sold 25 boxes to her grandmother, 55 boxes to her mother, and 10 boxes to a neighbor. How many more boxes of cookies does Jenna need to sell?
 				</div>
 				<div class="col-xs-11 col-sm-11 col-md-11">
-					<%= text_field_tag :answer, UserAnswer.get_answer(5, 3, @user_answers), size: 5, class: "form-control", disabled: true %>
+					<%= text_field_tag :answer, UserAnswer.get_answer(5, 3, @user_answers,2), size: 5, class: "form-control", disabled: true %>
 				</div>
 				<div class="col-xs-1 col-sm-1 col-md-1">
-					<%= UserAnswer.correct?(5, 3, @user_answers) %>
+					<%= UserAnswer.correct?(5, 3, @user_answers, 2) %>
 				</div>
 			</p>
 			<p>
@@ -570,10 +570,10 @@
 					4. There are 44 students on the soccer team and twice that number on the football team. tere are 18 boys and 17 girls on the track team. If each student only participates in one sport, how many students total are there on the soccer, football, and track teams?
 				</div>
 				<div class="col-xs-11 col-sm-11 col-md-11">
-					<%= text_field_tag :answer, UserAnswer.get_answer(5, 4, @user_answers), size: 5, class: "form-control", disabled: true %>
+					<%= text_field_tag :answer, UserAnswer.get_answer(5, 4, @user_answers,2), size: 5, class: "form-control", disabled: true %>
 				</div>
 				<div class="col-xs-1 col-sm-1 col-md-1">
-					<%= UserAnswer.correct?(5, 4, @user_answers) %>
+					<%= UserAnswer.correct?(5, 4, @user_answers, 2) %>
 				</div>
 			</p>
 			<p>
@@ -581,10 +581,10 @@
 					5. A group of 4 adults and 6 children are going to the science center. Child tickets cost $12, and adult tickets cost $. How much will the tickets cost in all?
 				</div>
 				<div class="col-xs-11 col-sm-11 col-md-11">
-					<%= text_field_tag :answer, UserAnswer.get_answer(5, 5, @user_answers), size: 5, class: "form-control", disabled: true %>
+					<%= text_field_tag :answer, UserAnswer.get_answer(5, 5, @user_answers,2), size: 5, class: "form-control", disabled: true %>
 				</div>
 				<div class="col-xs-1 col-sm-1 col-md-1">
-					<%= UserAnswer.correct?(5, 5, @user_answers) %>
+					<%= UserAnswer.correct?(5, 5, @user_answers, 2) %>
 				</div>
 			</p>
 		</div>

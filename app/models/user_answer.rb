@@ -45,14 +45,16 @@ class UserAnswer < ApplicationRecord
 		return_value
 	end
 
-	def self.get_answer(part_num, question_num, user_answers)
+	def self.get_answer(part_num, question_num, user_answers, test_num=1)
 		answers = user_answers.select {|question| question[:part_num] == part_num && question[:question_num] == question_num}.first
 		answers[:user_answer] unless answers.nil?
 	end
 
-	def self.correct?(part_num, question_num, user_answers)
+	def self.correct?(part_num, question_num, user_answers, test_num=1)
 		user_answer = user_answers.select {|question| question[:part_num] == part_num && question[:question_num] == question_num}.first
-		unless user_answer.nil?
+		if user_answer.nil?
+			"<span class='glyphicon glyphicon-remove text-danger' aria-hidden='true'></span>".html_safe
+		else
 			if user_answer[:user_answer].downcase == user_answer[:correct_answer].downcase
 				"<span class='glyphicon glyphicon-ok text-success' aria-hidden='true'></span>".html_safe
 			else

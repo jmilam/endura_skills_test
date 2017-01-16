@@ -40,7 +40,7 @@
                       <li><%= link_to "Logout", destroy_login_session_path, method: :delete, :class => 'navbar-link'  %></li>
                     <% else %>
                       <% unless current_page?('/logins/sign_in') %>
-                        <li id="timer" style="margin-top:15px;color:white;display:none">60.00</li>
+                        <li id="timer" style="margin-top:15px;color:white;display:none">30.00</li>
                       <% end %>
                     <% end %>
                   </ul>
