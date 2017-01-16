@@ -53,19 +53,19 @@
 			  	1) 633 - 401 = <%= text_field_tag :answer, UserAnswer.get_answer(1, 1, @user_answers,2), size: 5, class: "pull-right", disabled: true %>
 			  </div>
 			  <div class="col-xs-1 col-sm-1 col-md-1">
-					<%= UserAnswer.correct?(1, 4, @user_answers, 2) %>
+					<%= UserAnswer.correct?(1, 1, @user_answers, 2) %>
 				</div>
 			  <div class="col-xs-11 col-sm-11 col-md-2">
 			  	2) 22 + 1579 = <%= text_field_tag :answer, UserAnswer.get_answer(1, 2, @user_answers,2), size: 5, class: "pull-right", disabled: true %>
 			  </div>
 			  <div class="col-xs-1 col-sm-1 col-md-1">
-					<%= UserAnswer.correct?(1, 4, @user_answers, 2) %>
+					<%= UserAnswer.correct?(1, 2, @user_answers, 2) %>
 				</div>
 			  <div class="col-xs-11 col-sm-11 col-md-2">
 			  	3) 204 / 17 = <%= text_field_tag :answer, UserAnswer.get_answer(1, 3, @user_answers,2), size: 5, class: "pull-right", disabled: true %>
 			  </div>
 			  <div class="col-xs-1 col-sm-1 col-md-1">
-					<%= UserAnswer.correct?(1, 4, @user_answers, 2) %>
+					<%= UserAnswer.correct?(1, 3, @user_answers, 2) %>
 				</div>
 			  <div class="col-xs-11 col-sm-11 col-md-2">
 			  	4) 120 - 73 = <%= text_field_tag :answer, UserAnswer.get_answer(1, 4, @user_answers,2), size: 5, class: "pull-right", disabled: true %>
