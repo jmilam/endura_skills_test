@@ -33,6 +33,7 @@
 set :stage, :production
 set :deploy_to, "/var/www/endura_skills_test/production"
 set :branch, :master
+set :rails_env, 'production'
 
 
 
