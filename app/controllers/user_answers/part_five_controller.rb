@@ -24,9 +24,9 @@ class UserAnswers::PartFiveController < ApplicationController
 						else
 							ua = @login.user_answers.where(answer_id: question_answer.id).last
 							if ua.nil?
-								@login.user_answers.create(answer_id: question_answer.id, answer: answer)
+								@login.user_answers.create(answer_id: question_answer.id, answer: answer.match(/[^$]+/)[0])
 							else
-								UserAnswer.update(ua.id, answer: answer)
+								UserAnswer.update(ua.id, answer: answer.match(/[^$]+/)[0])
 							end
 						end
 					end

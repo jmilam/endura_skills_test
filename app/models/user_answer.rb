@@ -4,7 +4,7 @@ class UserAnswer < ApplicationRecord
 	def self.calculate_correct_count(user_answers)
 		count = 0
 		user_answers.each do |user_answer|
-				user_answer.answer == Answer.find(user_answer.answer_id).answer ? count += 1 : count
+				user_answer.answer == Answer.find(user_answer.answer_id).answer ? count += 1 : count unless Answer.find(user_answer.answer_id).exclude == true
 		end
 		count
 	end
