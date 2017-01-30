@@ -219,7 +219,7 @@
 				    	<%= radio_button 'part_three_quest_c', 'part_three_quest_c', "1 1/2", disabled: true, :checked => (UserAnswer.get_answer(3, 1, @user_answers,2) == "1 1/2") %> 1 1/2
 				    </div>
 				    <div class="col-xs-11 col-sm-5 col-md-2">
-				    	<%= radio_button 'part_three_quest_c', 'part_three_quest_c', disabled: true, :checked => (UserAnswer.get_answer(3, 1, @user_answers,2) == "3 1/4") %> 3 1/4
+				    	<%= radio_button 'part_three_quest_c', 'part_three_quest_c', "3 1/4", disabled: true, :checked => (UserAnswer.get_answer(3, 1, @user_answers,2) == "3 1/4") %> 3 1/4
 				    </div>
 				    <div class="col-xs-1 col-sm-1 col-md-1">
 							<%= UserAnswer.correct?(3, 1, @user_answers, 2) %>

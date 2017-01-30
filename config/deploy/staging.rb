@@ -33,7 +33,7 @@
 set :stage, :staging
 set :deploy_to, "/var/www/endura_skills_test/staging"
 set :branch, :staging
-set :rails_env 'development'
+set :rails_env, 'development'
 
 
 

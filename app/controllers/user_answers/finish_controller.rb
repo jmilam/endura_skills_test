@@ -6,7 +6,7 @@ class UserAnswers::FinishController < ApplicationController
 	end
 
 	def show
-		p @user = User.find(params[:id])
+		@user = User.find(params[:id])
 		if @user.complete == false || @user.complete == nil
 			flash[:error] = "User has not completed test. No results to view."
 			redirect_to user_answers_admin_index_path

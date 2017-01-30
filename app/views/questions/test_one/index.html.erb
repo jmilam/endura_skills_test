@@ -6,6 +6,9 @@
 				  <div class="panel-heading"><h4>Sign In</h4></div>
 				  <div class="panel-body">
 				  	<div class="col-md-12">
+				  		<div class="row">
+				  			<div id="login_alert"></div>
+				  		</div>
 					    <div class="row">
 								<div class="field">
 						      <%= f.label :first_name %><br />
@@ -77,7 +80,7 @@
 		<div class="row">
 			<div class="col-xs-12 col-sm-12 col-md-12">
 				<p>
-					In the space provided below, please write how you are planning on benefitting the company, and what characteristics you have that differentiate yourself from other candidates.
+					In the space provided below, please write how you are planning on benefitting the company, and what characteristics you have that differentiate yourself from other candidates. <div class="validation_msg"></div>
 				</p>
 				<p><%= f.text_area :answer, id: "part_6_question_3", rows: 10, class: "form-control" %></p>
 			</div>

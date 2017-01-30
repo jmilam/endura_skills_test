@@ -15,7 +15,11 @@ submitForm = (form_id) ->
     email = $("#email").val()
     test_num = $("#test_num").attr('val')
 
-    send_data = {login: {first_name: first_name, last_name: last_name, email: email, test_num: test_num}}
+    if first_name == '' || last_name == '' || email == ''   
+      $('p#login_alert').text "All Fields must be filled out before startin test"
+      return 'stop'
+    else
+      send_data = {login: {first_name: first_name, last_name: last_name, email: email, test_num: test_num}}
 
   else if form_id is 'part_one'
     question_1 = $("#part_1_question_1").val()
@@ -160,11 +164,13 @@ submitForm = (form_id) ->
 
 $(document).on 'click', ".next", (e) ->
   e.preventDefault()
-  submitForm($(this).attr('id'))
-  id = $(this).attr('href')
-  $(this).parents(id).css 'display', 'none'
-  $(this).parents(id).next().css 'display', 'block' 
-  return
+  response = submitForm($(this).attr('id'))
+  if response == 'stop'
+  else
+    id = $(this).attr('href')
+    $(this).parents(id).css 'display', 'none'
+    $(this).parents(id).next().css 'display', 'block' 
+    return
 
 $(document).on 'click', ".prev", (e) ->
   e.preventDefault()
@@ -176,9 +182,10 @@ $(document).on 'click', ".prev", (e) ->
 
 $(document).on 'click', ".finish", (e) ->
   e.preventDefault()
-  if $("#part_6_question_1").val() == '' || question_2 = $("#part_6_question_2").val() == ''
+  if $("#part_6_question_1").val() == '' || $("#part_6_question_2").val() == '' || $("#part_6_question_3").val() == ''
     $('#part_6_question_1').css('border-color', 'red')
     $('#part_6_question_2').css('border-color', 'red')
+    $('#part_6_question_3').css('border-color', 'red')
     $('.validation_msg').text "You must answer this question."
   else   
     submitForm($(this).attr('id'))
