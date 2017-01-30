@@ -364,59 +364,59 @@
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-6">
 				<div class="row">
-			  	Rank the numbers below from smallest to largest.
+			  	Rank the numbers below from smallest(1) to largest(6).
 			  </div>
 			  <div class="row">	
 					<div class="col-xs-5 col-sm-5 col-md-5">
-				  	1) 5723852
-				  </div>
-				  <div class="col-xs-5 col-sm-5 col-md-5">
-				  	<%= text_field_tag :answer, UserAnswer.get_answer(4, 4, @user_answers,2), size: 5, class: "pull-left form-control", disabled: true %>
-				  </div>
-				  <div class="col-xs-2 col-sm-2 col-md-2">
-						<%= UserAnswer.correct?(4, 1, @user_answers, 2) %>
-					</div>
-				  <div class="col-xs-5 col-sm-5 col-md-5">
-				  	2) 8456812
-				  </div>
-				  <div class="col-xs-5 col-sm-5 col-md-5">
-				  	<%= text_field_tag :answer, UserAnswer.get_answer(4, 3, @user_answers,2), size: 5, class: "pull-left form-control", disabled: true %>
-				  </div>
-				  <div class="col-xs-2 col-sm-2 col-md-2">
-						<%= UserAnswer.correct?(4, 2, @user_answers, 2) %>
-					</div>
-					<div class="col-xs-5 col-sm-5 col-md-5">
-				  	3) 1859756 
-				  </div>
-				  <div class="col-xs-5 col-sm-5 col-md-5">
-				  	<%= text_field_tag :answer, UserAnswer.get_answer(4, 6, @user_answers,2), size: 5, class: "pull-left form-control", disabled: true %>
-				  </div>
-				  <div class="col-xs-2 col-sm-2 col-md-2">
-						<%= UserAnswer.correct?(4, 3, @user_answers, 2) %>
-					</div>
-				  <div class="col-xs-5 col-sm-5 col-md-5">
-				  	4) 7575757
+				  	5723852
 				  </div>
 				  <div class="col-xs-5 col-sm-5 col-md-5">
 				  	<%= text_field_tag :answer, UserAnswer.get_answer(4, 1, @user_answers,2), size: 5, class: "pull-left form-control", disabled: true %>
 				  </div>
 				  <div class="col-xs-2 col-sm-2 col-md-2">
-						<%= UserAnswer.correct?(4, 4, @user_answers, 2) %>
+						<%= UserAnswer.correct?(4, 1, @user_answers, 2) %>
 					</div>
 				  <div class="col-xs-5 col-sm-5 col-md-5">
-				  	5) 7755775
+				  	8456812
 				  </div>
 				  <div class="col-xs-5 col-sm-5 col-md-5">
 				  	<%= text_field_tag :answer, UserAnswer.get_answer(4, 2, @user_answers,2), size: 5, class: "pull-left form-control", disabled: true %>
 				  </div>
 				  <div class="col-xs-2 col-sm-2 col-md-2">
-						<%= UserAnswer.correct?(4, 5, @user_answers, 2) %>
+						<%= UserAnswer.correct?(4, 2, @user_answers, 2) %>
+					</div>
+					<div class="col-xs-5 col-sm-5 col-md-5">
+				  	1859756 
+				  </div>
+				  <div class="col-xs-5 col-sm-5 col-md-5">
+				  	<%= text_field_tag :answer, UserAnswer.get_answer(4, 3, @user_answers,2), size: 5, class: "pull-left form-control", disabled: true %>
+				  </div>
+				  <div class="col-xs-2 col-sm-2 col-md-2">
+						<%= UserAnswer.correct?(4, 3, @user_answers, 2) %>
 					</div>
 				  <div class="col-xs-5 col-sm-5 col-md-5">
-				  	6) 3733773
+				  	7575757
+				  </div>
+				  <div class="col-xs-5 col-sm-5 col-md-5">
+				  	<%= text_field_tag :answer, UserAnswer.get_answer(4, 4, @user_answers,2), size: 5, class: "pull-left form-control", disabled: true %>
+				  </div>
+				  <div class="col-xs-2 col-sm-2 col-md-2">
+						<%= UserAnswer.correct?(4, 4, @user_answers, 2) %>
+					</div>
+				  <div class="col-xs-5 col-sm-5 col-md-5">
+				  	7755775
 				  </div>
 				  <div class="col-xs-5 col-sm-5 col-md-5">
 				  	<%= text_field_tag :answer, UserAnswer.get_answer(4, 5, @user_answers,2), size: 5, class: "pull-left form-control", disabled: true %>
+				  </div>
+				  <div class="col-xs-2 col-sm-2 col-md-2">
+						<%= UserAnswer.correct?(4, 5, @user_answers, 2) %>
+					</div>
+				  <div class="col-xs-5 col-sm-5 col-md-5">
+				  	3733773
+				  </div>
+				  <div class="col-xs-5 col-sm-5 col-md-5">
+				  	<%= text_field_tag :answer, UserAnswer.get_answer(4, 6, @user_answers,2), size: 5, class: "pull-left form-control", disabled: true %>
 				  </div>
 				  <div class="col-xs-2 col-sm-2 col-md-2">
 						<%= UserAnswer.correct?(4, 6, @user_answers, 2) %>
