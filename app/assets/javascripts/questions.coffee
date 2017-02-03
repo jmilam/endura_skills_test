@@ -213,7 +213,7 @@ startClock = ->
     if counter == 0.00
       $('#timer').text 0.00
       $.ajax
-        url: '/questions/99'
+        url: '/questions/test_router/99'
         type: 'delete'
         dataType: 'json'
         data: {id: 99}

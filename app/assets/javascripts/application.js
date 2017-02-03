@@ -35,5 +35,3 @@ $(document).on('turbolinks:load', function(){
     	$('.alert').alert('close');
 	}, 5000);
 });
-
-$('.alert')
