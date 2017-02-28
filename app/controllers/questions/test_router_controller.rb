@@ -10,9 +10,11 @@ class Questions::TestRouterController < ApplicationController
 	end
 
 	def destroy
-		# current_login.complete = true
-		# current_login.save
+		user = User.find(params[:id])
+		user.complete = true
+		user.completed_date = Date.today
+		user.save
+
 		flash[:notice] = "You have reached the end of your time. All answers have been saved. Please follow up with your HR representative."
-		# sign_out(current_login)
 	end
 end

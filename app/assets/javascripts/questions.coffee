@@ -212,11 +212,12 @@ startClock = ->
     counter = counter - 0.01
     if counter == 0.00
       $('#timer').text 0.00
+      user_id = $('#user_id').val()
       $.ajax
-        url: '/questions/test_router/99'
+        url: '/questions/test_router/' + user_id
         type: 'delete'
         dataType: 'json'
-        data: {id: 99}
+        data: {id: user_id}
         success: (data) ->
           window.location = 'http://' + window.location.host + '/logins/sign_in'
           return
