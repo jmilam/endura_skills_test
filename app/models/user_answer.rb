@@ -55,7 +55,7 @@ class UserAnswer < ApplicationRecord
 		if user_answer.nil?
 			"<span class='glyphicon glyphicon-remove text-danger' aria-hidden='true'></span>".html_safe
 		else
-			if part_num == 5
+			if part_num == 4 || part_num == 5
 				answer_equal = user_answer[:user_answer].to_i == user_answer[:correct_answer].to_i
 			else
 				answer_equal = user_answer[:user_answer].downcase == user_answer[:correct_answer].downcase
