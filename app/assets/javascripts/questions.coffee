@@ -164,13 +164,16 @@ submitForm = (form_id) ->
 
 $(document).on 'click', ".next", (e) ->
   e.preventDefault()
-  response = submitForm($(this).attr('id'))
-  if response == 'stop'
+  if $('#accept_terms').prop 'checked'
+    response = submitForm($(this).attr('id'))
+    if response == 'stop'
+    else
+      id = $(this).attr('href')
+      $(this).parents(id).css 'display', 'none'
+      $(this).parents(id).next().css 'display', 'block' 
+      return
   else
-    id = $(this).attr('href')
-    $(this).parents(id).css 'display', 'none'
-    $(this).parents(id).next().css 'display', 'block' 
-    return
+    alert 'You have to accept that you understand the instructions before proceeding.'
 
 $(document).on 'click', ".prev", (e) ->
   e.preventDefault()
